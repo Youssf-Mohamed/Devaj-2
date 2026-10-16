@@ -38,6 +38,7 @@ export default function ProjectCalculatorSection() {
     phone: "",
     notes: "",
   });
+  const [bookingRefNumber, setBookingRefNumber] = useState("DVJ-782194");
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -109,15 +110,12 @@ export default function ProjectCalculatorSection() {
 
   const handleConfirmBooking = (e) => {
     e.preventDefault();
+    setBookingRefNumber(`DVJ-${Math.floor(100000 + Math.random() * 900000)}`);
     setPaymentStep("processing");
     setTimeout(() => {
       setPaymentStep("success");
     }, 1400);
   };
-
-  const bookingRefNumber = useMemo(() => {
-    return `DVJ-${Math.floor(100000 + Math.random() * 900000)}`;
-  }, [paymentStep]);
 
   return (
     <section

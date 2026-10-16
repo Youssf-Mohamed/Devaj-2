@@ -74,14 +74,6 @@ export default function AboutGroupSection() {
               <span style={{ color: "#E63946", fontStyle: "normal" }}>.</span>
             </h2>
 
-            <p className="about-lead-paragraph">
-              We are <strong>Devaj Group</strong> — an independent media production group built around two autonomous, highly specialized creative houses: <em>Devaj Productions</em> and <em>Devaj Films</em>. Together, we cover the complete journey of visual content from the first frame of an idea to the final cut.
-            </p>
-
-            <p className="about-body-paragraph">
-              Whether engineering agile, conversion-driven digital commercials for modern brands or directing large-scale corporate documentaries and TVCs for enterprise institutions, our teams combine cinematic artistry with high-speed commercial execution.
-            </p>
-
             {/* Three Brand Pillars */}
             <div className="about-pillars-grid">
               <div className="about-pillar-card">
@@ -188,7 +180,7 @@ export default function AboutGroupSection() {
           color: #ffffff;
           font-weight: 700;
           font-style: italic;
-          margin: 0 0 24px 0;
+          margin: 0 0 36px 0;
         }
 
         .about-lead-paragraph {

@@ -130,16 +130,18 @@ export default function ProjectCalculatorSection() {
         borderTop: "1px solid rgba(255, 255, 255, 0.08)",
       }}
     >
-      {/* Ambient Red Glow */}
+      {/* Ambient Red Glow - Perfectly Circular & Feathered (Zero Edge Clipping) */}
       <div
         style={{
           position: "absolute",
-          top: "30%",
+          top: "40%",
           left: "50%",
-          transform: "translateX(-50%)",
-          width: "900px",
-          height: "400px",
-          background: "radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, transparent 70%)",
+          transform: "translate(-50%, -50%)",
+          width: "1000px",
+          height: "1000px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, rgba(230, 57, 70, 0.03) 35%, rgba(230, 57, 70, 0) 65%)",
           pointerEvents: "none",
           zIndex: 0,
         }}

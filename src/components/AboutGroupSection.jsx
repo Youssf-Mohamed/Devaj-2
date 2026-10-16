@@ -49,7 +49,7 @@ export default function AboutGroupSection() {
         {/* =================================================================== */}
         <div className="about-split-grid">
           {/* Left Column: Brand Story & Manifesto */}
-          <div className="about-content-col reveal-from-left">
+          <div className="about-content-col">
             <div
               style={{
                 display: "inline-flex",
@@ -125,23 +125,20 @@ export default function AboutGroupSection() {
             </div>
           </div>
 
-          {/* Right Column: Studio Photo with Transparent Logo Overlay */}
-          <div className="about-visual-col reveal-from-right delay-200">
+          {/* Right Column: Devaj Brand Card with White Background */}
+          <div className="about-visual-col">
             <div className="about-image-card">
-              <img
-                src="/images/devaj-studio.jpg"
-                alt="Devaj Group Film Production Studio in Cairo"
-                className="about-studio-image"
-              />
-              <div className="about-image-overlay" />
-
-              {/* Floating Top Frosted Badge with Transparent Logo */}
-              <div className="about-logo-badge">
+              <div className="about-logo-card-wrap">
                 <img
-                  src="/images/devaj-logo.png"
+                  src="/images/devaj-logo-card.png"
                   alt="Devaj Group"
-                  className="about-badge-logo-img"
+                  className="about-studio-image"
                 />
+              </div>
+
+              {/* Floating Top Frosted Badge */}
+              <div className="about-logo-badge">
+                <span className="badge-live-pulse-dot" />
                 <div className="badge-text-box">
                   <span className="badge-title">Devaj Group HQ</span>
                   <span className="badge-subtitle">Cairo Production Soundstage</span>
@@ -319,33 +316,44 @@ export default function AboutGroupSection() {
           position: relative;
           border-radius: 28px;
           overflow: hidden;
-          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(230, 57, 70, 0.12);
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 50px rgba(255, 255, 255, 0.08);
           aspect-ratio: 4 / 3.4;
-          background: #141414;
-          border: 1px solid rgba(255, 255, 255, 0.12);
+          background: #ffffff;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .about-logo-card-wrap {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 60px 48px;
         }
 
         .about-studio-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+          width: 78%;
+          max-width: 420px;
+          height: auto;
+          object-fit: contain;
           display: block;
-          transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .about-image-card:hover .about-studio-image {
-          transform: scale(1.04);
+          transform: scale(1.05);
         }
 
-        .about-image-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.25) 0%,
-            transparent 45%,
-            rgba(0, 0, 0, 0.75) 100%
-          );
+        .badge-live-pulse-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #E63946;
+          box-shadow: 0 0 8px rgba(230, 57, 70, 0.85);
+          flex-shrink: 0;
         }
 
         .about-logo-badge {
@@ -354,21 +362,14 @@ export default function AboutGroupSection() {
           left: 22px;
           display: flex;
           align-items: center;
-          gap: 14px;
-          padding: 10px 20px;
+          gap: 12px;
+          padding: 10px 18px;
           border-radius: 9999px;
-          background: rgba(18, 18, 18, 0.65);
+          background: rgba(14, 14, 14, 0.88);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.18);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .about-badge-logo-img {
-          height: 32px;
-          width: auto;
-          display: block;
-          object-fit: contain;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         }
 
         .badge-text-box {
@@ -401,11 +402,11 @@ export default function AboutGroupSection() {
           gap: 12px;
           padding: 14px 20px;
           border-radius: 18px;
-          background: rgba(18, 18, 18, 0.75);
+          background: rgba(14, 14, 14, 0.9);
           backdrop-filter: blur(14px);
           -webkit-backdrop-filter: blur(14px);
           border: 1px solid rgba(255, 255, 255, 0.15);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
 
         .status-live-dot {

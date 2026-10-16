@@ -13,12 +13,8 @@ import ClientsPartnersSection from "@/components/ClientsPartnersSection";
 export default function Home() {
   const [connectModalOpen, setConnectModalOpen] = useState(false);
 
-  // Global Scroll Reveal Observer: reveals and dissolves elements as user scrolls
+  // Global Scroll Reveal Observer: reveals elements as user scrolls
   useEffect(() => {
-    const revealElements = document.querySelectorAll(
-      ".reveal-on-scroll, .reveal-from-left, .reveal-from-right, .reveal-scale"
-    );
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -34,9 +30,31 @@ export default function Home() {
       }
     );
 
-    revealElements.forEach((el) => observer.observe(el));
+    const observeAll = () => {
+      document
+        .querySelectorAll(
+          ".reveal-on-scroll, .reveal-from-left, .reveal-from-right, .reveal-scale"
+        )
+        .forEach((el) => {
+          if (!el.hasAttribute("data-observed")) {
+            el.setAttribute("data-observed", "true");
+            observer.observe(el);
+          }
+        });
+    };
 
-    return () => observer.disconnect();
+    observeAll();
+
+    const mutationObserver = new MutationObserver(() => {
+      observeAll();
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 
   const handleConnectClick = (e) => {

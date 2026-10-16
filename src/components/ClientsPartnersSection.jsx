@@ -322,7 +322,7 @@ export default function ClientsPartnersSection() {
               onClick={() => setSelectedBrand(brand)}
               onMouseEnter={() => handleMouseEnterCard(brand.id)}
               onMouseLeave={() => handleMouseLeaveCard(brand.id)}
-              className={`brand-cinema-card reveal-on-scroll delay-${(idx + 1) * 100}`}
+              className="brand-cinema-card"
               role="button"
               tabIndex={0}
               aria-label={`Open project details for ${brand.name}`}
@@ -684,6 +684,18 @@ export default function ClientsPartnersSection() {
           justifyContent: space-between;
           padding: 24px 26px;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          animation: brandCardIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes brandCardIn {
+          from {
+            opacity: 0;
+            transform: translateY(16px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         .brand-cinema-card:hover {

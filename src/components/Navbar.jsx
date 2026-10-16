@@ -73,7 +73,7 @@ export default function Navbar() {
           backdropFilter: scrolled ? "blur(16px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
           borderBottom: scrolled ? "1px solid rgba(234, 232, 228, 0.12)" : "1px solid transparent",
-          padding: scrolled ? "1.6rem 3.5rem" : "2.6rem 3.5rem",
+          padding: scrolled ? "1rem 3.5rem" : "1.6rem 3.5rem",
           color: "#eae8e4",
         }}
       >
@@ -108,11 +108,13 @@ export default function Navbar() {
             <img
               src="/images/devaj-logo.png"
               alt="Devaj Group"
+              className="navbar-brand-logo"
               style={{
-                height: "54px",
+                height: scrolled ? "82px" : "108px",
                 width: "auto",
                 display: "block",
                 objectFit: "contain",
+                transition: "height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
               }}
             />
           </a>
@@ -319,7 +321,10 @@ export default function Navbar() {
         }
         @media (max-width: 768px) {
           nav {
-            padding: 1.6rem 1.8rem !important;
+            padding: 1rem 1.5rem !important;
+          }
+          .navbar-brand-logo {
+            height: 68px !important;
           }
         }
       `}</style>

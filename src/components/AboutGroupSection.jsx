@@ -125,34 +125,14 @@ export default function AboutGroupSection() {
             </div>
           </div>
 
-          {/* Right Column: Devaj Brand Card with White Background */}
+          {/* Right Column: Hero White Devaj Logo (2x scale, no card, no badges) */}
           <div className="about-visual-col">
-            <div className="about-image-card">
-              <div className="about-logo-card-wrap">
-                <img
-                  src="/images/devaj-logo-card.png"
-                  alt="Devaj Group"
-                  className="about-studio-image"
-                />
-              </div>
-
-              {/* Floating Top Frosted Badge */}
-              <div className="about-logo-badge">
-                <span className="badge-live-pulse-dot" />
-                <div className="badge-text-box">
-                  <span className="badge-title">Devaj Group HQ</span>
-                  <span className="badge-subtitle">Cairo Production Soundstage</span>
-                </div>
-              </div>
-
-              {/* Bottom Floating Stats Tag */}
-              <div className="about-bottom-tag">
-                <div className="status-live-dot" />
-                <div>
-                  <span className="tag-headline">From First Frame to Final Cut</span>
-                  <span className="tag-sub">Arri & Red Cinema Optics // Multi-Cam Soundstages</span>
-                </div>
-              </div>
+            <div className="about-logo-hero-wrap">
+              <img
+                src="/images/devaj-logo.png"
+                alt="Devaj Group"
+                className="about-hero-logo-img"
+              />
             </div>
           </div>
         </div>
@@ -164,8 +144,8 @@ export default function AboutGroupSection() {
       <style jsx>{`
         .about-split-grid {
           display: grid;
-          grid-template-columns: 1.15fr 0.95fr;
-          gap: 72px;
+          grid-template-columns: 1.05fr 1fr;
+          gap: 64px;
           align-items: center;
         }
 
@@ -311,126 +291,49 @@ export default function AboutGroupSection() {
           color: #ffffff;
         }
 
-        /* Right Column Visual Card */
-        .about-image-card {
-          position: relative;
-          border-radius: 28px;
-          overflow: hidden;
-          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 50px rgba(255, 255, 255, 0.08);
-          aspect-ratio: 4 / 3.4;
-          background: #ffffff;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+        /* Right Column Hero Logo (No card, 2x bigger, pure white) */
+        .about-visual-col {
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .about-logo-card-wrap {
           width: 100%;
-          height: 100%;
+        }
+
+        .about-logo-hero-wrap {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 60px 48px;
+          width: 100%;
+          padding: 24px 0;
+          position: relative;
         }
 
-        .about-studio-image {
-          width: 78%;
-          max-width: 420px;
+        .about-logo-hero-wrap::before {
+          content: "";
+          position: absolute;
+          width: 480px;
+          height: 260px;
+          background: radial-gradient(circle, rgba(230, 57, 70, 0.12) 0%, rgba(255, 255, 255, 0.04) 40%, transparent 70%);
+          filter: blur(40px);
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        .about-hero-logo-img {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          max-width: 680px;
           height: auto;
           object-fit: contain;
           display: block;
-          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          filter: drop-shadow(0 15px 45px rgba(0, 0, 0, 0.85));
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
         }
 
-        .about-image-card:hover .about-studio-image {
-          transform: scale(1.05);
-        }
-
-        .badge-live-pulse-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: #E63946;
-          box-shadow: 0 0 8px rgba(230, 57, 70, 0.85);
-          flex-shrink: 0;
-        }
-
-        .about-logo-badge {
-          position: absolute;
-          top: 22px;
-          left: 22px;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 10px 18px;
-          border-radius: 9999px;
-          background: rgba(14, 14, 14, 0.88);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-        }
-
-        .badge-text-box {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .badge-title {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.8rem;
-          font-weight: 700;
-          color: #ffffff;
-          line-height: 1.2;
-        }
-
-        .badge-subtitle {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.68rem;
-          font-weight: 600;
-          color: rgba(255, 255, 255, 0.7);
-        }
-
-        .about-bottom-tag {
-          position: absolute;
-          bottom: 22px;
-          left: 22px;
-          right: 22px;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 14px 20px;
-          border-radius: 18px;
-          background: rgba(14, 14, 14, 0.9);
-          backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px);
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        .status-live-dot {
-          width: 9px;
-          height: 9px;
-          border-radius: 50%;
-          background: #25D366;
-          box-shadow: 0 0 10px #25D366;
-          flex-shrink: 0;
-        }
-
-        .tag-headline {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.88rem;
-          font-weight: 700;
-          color: #ffffff;
-          display: block;
-        }
-
-        .tag-sub {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.75rem;
-          color: rgba(255, 255, 255, 0.65);
-          display: block;
+        .about-hero-logo-img:hover {
+          transform: scale(1.035);
+          filter: drop-shadow(0 20px 55px rgba(230, 57, 70, 0.25));
         }
 
         @media (max-width: 1024px) {
@@ -438,8 +341,8 @@ export default function AboutGroupSection() {
             grid-template-columns: 1fr;
             gap: 48px;
           }
-          .about-image-card {
-            max-width: 600px;
+          .about-hero-logo-img {
+            max-width: 500px;
             margin: 0 auto;
           }
         }
@@ -448,16 +351,8 @@ export default function AboutGroupSection() {
           .about-headline {
             font-size: 2.1rem;
           }
-          .about-logo-badge {
-            top: 14px;
-            left: 14px;
-            padding: 8px 14px;
-          }
-          .about-bottom-tag {
-            bottom: 14px;
-            left: 14px;
-            right: 14px;
-            padding: 10px 14px;
+          .about-hero-logo-img {
+            max-width: 360px;
           }
         }
       `}</style>

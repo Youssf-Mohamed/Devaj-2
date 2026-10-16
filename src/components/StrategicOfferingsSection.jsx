@@ -351,17 +351,17 @@ export default function StrategicOfferingsSection() {
           font-size: clamp(3.4rem, 4.4vw, 4.8rem);
           font-weight: 800;
           line-height: 1;
-          color: #E63946;
+          color: #ffffff;
           letter-spacing: -0.04em;
-          text-shadow: 0 4px 18px rgba(230, 57, 70, 0.28);
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
           transition: transform 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
           display: block;
         }
 
         .offering-card:hover .card-number-text {
           transform: translateY(-3px) scale(1.03);
-          color: #ff4757;
-          text-shadow: 0 8px 26px rgba(230, 57, 70, 0.5);
+          color: #ffffff;
+          text-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
         }
 
         /* Card Inner Box */
@@ -567,8 +567,8 @@ export default function StrategicOfferingsSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 2.4rem;
           font-weight: 800;
-          color: #E63946;
-          text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+          color: #ffffff;
+          text-shadow: 0 4px 12px rgba(0,0,0,0.6);
         }
 
         .modal-pill-tag {

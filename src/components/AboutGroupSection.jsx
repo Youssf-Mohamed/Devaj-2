@@ -8,19 +8,33 @@ export default function AboutGroupSection() {
     <section
       id="about"
       style={{
-        backgroundColor: "#F7F6F2",
-        color: "#151515",
+        backgroundColor: "#0d0d0d",
+        color: "#eae8e4",
         position: "relative",
         zIndex: 20,
         marginTop: "-64px",
         borderTopLeftRadius: "52px",
         borderTopRightRadius: "52px",
-        boxShadow: "0 -35px 80px rgba(0, 0, 0, 0.45), 0 -12px 30px rgba(0, 0, 0, 0.25)",
-        borderTop: "1px solid rgba(255, 255, 255, 0.6)",
+        boxShadow: "0 -35px 80px rgba(0, 0, 0, 0.75), 0 -12px 30px rgba(0, 0, 0, 0.45)",
+        borderTop: "1px solid rgba(255, 255, 255, 0.08)",
         padding: "125px 0 70px",
         overflow: "hidden",
       }}
     >
+      {/* Ambient Red Glow */}
+      <div
+        style={{
+          position: "absolute",
+          top: "20%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "900px",
+          height: "400px",
+          background: "radial-gradient(circle, rgba(230, 57, 70, 0.07) 0%, transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
       <div
         style={{
           maxWidth: "1560px",
@@ -50,7 +64,7 @@ export default function AboutGroupSection() {
             >
               <span>Devaj Group Identity</span>
               <span style={{ fontSize: "1.1rem" }}>•</span>
-              <span style={{ color: "rgba(21, 21, 21, 0.5)", fontWeight: 600 }}>Who We Are</span>
+              <span style={{ color: "rgba(234, 232, 228, 0.5)", fontWeight: 600 }}>Who We Are</span>
             </div>
 
             <h2 className="about-headline">
@@ -169,7 +183,7 @@ export default function AboutGroupSection() {
           font-size: clamp(2.3rem, 4vw, 3.8rem);
           line-height: 1.14;
           letter-spacing: -0.025em;
-          color: "#111111";
+          color: #ffffff;
           font-weight: 700;
           font-style: italic;
           margin: 0 0 24px 0;
@@ -179,12 +193,12 @@ export default function AboutGroupSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: clamp(1.05rem, 1.25vw, 1.2rem);
           line-height: 1.65;
-          color: rgba(21, 21, 21, 0.88);
+          color: rgba(234, 232, 228, 0.85);
           margin-bottom: 18px;
         }
 
         .about-lead-paragraph strong {
-          color: #111111;
+          color: #ffffff;
           font-weight: 700;
         }
 
@@ -198,7 +212,7 @@ export default function AboutGroupSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: clamp(0.98rem, 1.1vw, 1.05rem);
           line-height: 1.65;
-          color: rgba(21, 21, 21, 0.65);
+          color: rgba(234, 232, 228, 0.65);
           margin-bottom: 34px;
         }
 
@@ -213,25 +227,26 @@ export default function AboutGroupSection() {
           display: flex;
           align-items: flex-start;
           gap: 16px;
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.07);
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 16px;
           padding: 16px 20px;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .about-pillar-card:hover {
           transform: translateX(6px);
-          border-color: rgba(230, 57, 70, 0.35);
-          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(230, 57, 70, 0.45);
+          box-shadow: 0 10px 24px rgba(230, 57, 70, 0.15);
         }
 
         .pillar-icon-box {
           width: 38px;
           height: 38px;
           border-radius: 10px;
-          background: rgba(230, 57, 70, 0.09);
+          background: rgba(230, 57, 70, 0.15);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -242,7 +257,7 @@ export default function AboutGroupSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.98rem;
           font-weight: 700;
-          color: #111111;
+          color: #ffffff;
           margin: 0 0 4px 0;
         }
 
@@ -250,7 +265,7 @@ export default function AboutGroupSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.88rem;
           line-height: 1.5;
-          color: rgba(21, 21, 21, 0.62);
+          color: rgba(234, 232, 228, 0.65);
           margin: 0;
         }
 
@@ -267,20 +282,20 @@ export default function AboutGroupSection() {
           gap: 10px;
           padding: 15px 32px;
           border-radius: 9999px;
-          background-color: #151515;
+          background-color: #E63946;
           color: #ffffff;
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.95rem;
           font-weight: 700;
           text-decoration: none;
           transition: all 0.25s ease;
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 24px rgba(230, 57, 70, 0.35);
         }
 
         .about-cta-primary:hover {
-          background-color: #E63946;
+          background-color: #ff4757;
           transform: translateY(-2px);
-          box-shadow: 0 10px 28px rgba(230, 57, 70, 0.35);
+          box-shadow: 0 12px 30px rgba(230, 57, 70, 0.5);
         }
 
         .about-cta-secondary {
@@ -289,9 +304,9 @@ export default function AboutGroupSection() {
           gap: 8px;
           padding: 15px 28px;
           border-radius: 9999px;
-          background-color: transparent;
-          border: 1px solid rgba(0, 0, 0, 0.15);
-          color: #151515;
+          background-color: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          color: #eae8e4;
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.95rem;
           font-weight: 600;
@@ -300,8 +315,9 @@ export default function AboutGroupSection() {
         }
 
         .about-cta-secondary:hover {
-          background-color: #ffffff;
-          border-color: #151515;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-color: rgba(255, 255, 255, 0.35);
+          color: #ffffff;
         }
 
         /* Right Column Visual Card */
@@ -309,10 +325,10 @@ export default function AboutGroupSection() {
           position: relative;
           border-radius: 28px;
           overflow: hidden;
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(230, 57, 70, 0.12);
           aspect-ratio: 4 / 3.4;
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.08);
+          background: #141414;
+          border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .about-studio-image {

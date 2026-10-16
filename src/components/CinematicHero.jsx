@@ -46,7 +46,7 @@ export default function CinematicHero({
         height: "100vh",
         minHeight: "720px",
         overflow: "hidden",
-        backgroundColor: "#1f1f1f",
+        backgroundColor: "#0d0d0d",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

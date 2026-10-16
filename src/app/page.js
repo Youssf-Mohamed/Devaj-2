@@ -70,7 +70,7 @@ export default function Home() {
       dir="ltr"
       style={{
         minHeight: "100vh",
-        backgroundColor: "#171717",
+        backgroundColor: "#0d0d0d",
         color: "#eae8e4",
         position: "relative",
       }}
@@ -81,10 +81,10 @@ export default function Home() {
       {/* 2. Cinematic Hero Header */}
       <CinematicHero onConnectClick={handleConnectClick} />
 
-      {/* 3. Who We Are: Devaj Group Identity & Core Vision (Light Studio Theme) */}
+      {/* 3. Who We Are: Devaj Group Identity & Core Vision */}
       <AboutGroupSection />
 
-      {/* 4. Strategic Service Offerings (Monks-style 4-Card Grid with Lift Effects & Devaj Data) */}
+      {/* 4. Strategic Service Offerings */}
       <StrategicOfferingsSection />
 
       {/* 5. The Two Creative Houses: Devaj Production & Devaj Film */}
@@ -93,17 +93,17 @@ export default function Home() {
       {/* 6. Which House Fits Your Story: Interactive Project Calculator & Booking */}
       <ProjectCalculatorSection />
 
-      {/* 7. Sectors We Serve (Infinite Moving Ticker on Warm Studio Background) */}
+      {/* 7. Sectors We Serve */}
       <SectorsSection />
 
-      {/* 8. Brands We Have Delivered For (Compact Visual Grid + Interactive Work Screen) */}
+      {/* 8. Brands We Have Delivered For */}
       <ClientsPartnersSection />
 
-      {/* 7. Official Devaj Group Contact & Footer (Normal, Solid Relative Section) */}
+      {/* 9. Official Devaj Group Contact & Footer */}
       <footer
         id="connect"
         style={{
-          backgroundColor: "#181818",
+          backgroundColor: "#0d0d0d",
           color: "#eae8e4",
           position: "relative",
           zIndex: 30,

@@ -41,19 +41,34 @@ export default function SectorsSection() {
     <section
       id="sectors"
       style={{
-        backgroundColor: "#F7F6F2",
-        color: "#151515",
+        backgroundColor: "#0d0d0d",
+        color: "#eae8e4",
         position: "relative",
         zIndex: 26,
         marginTop: "-64px",
         borderTopLeftRadius: "52px",
         borderTopRightRadius: "52px",
         boxShadow: "0 -35px 80px rgba(0, 0, 0, 0.55), 0 -12px 30px rgba(0, 0, 0, 0.35)",
-        borderTop: "1px solid rgba(255, 255, 255, 0.6)",
+        borderTop: "1px solid rgba(255, 255, 255, 0.08)",
         padding: "120px 0 145px",
         overflow: "hidden",
       }}
     >
+      {/* Subtle Ambient Red Glow matching Project Calculator Section */}
+      <div
+        style={{
+          position: "absolute",
+          top: "20%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "900px",
+          height: "500px",
+          background: "radial-gradient(circle, rgba(230, 57, 70, 0.07) 0%, transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+
       {/* =================================================================== */}
       {/* 1. SECTION EDITORIAL HEADER                                        */}
       {/* =================================================================== */}
@@ -95,7 +110,7 @@ export default function SectorsSection() {
                 fontSize: "clamp(2.5rem, 4.5vw, 4.4rem)",
                 lineHeight: 1.1,
                 letterSpacing: "-0.025em",
-                color: "#111111",
+                color: "#ffffff",
                 margin: 0,
                 fontWeight: 700,
                 fontStyle: "italic",
@@ -111,7 +126,7 @@ export default function SectorsSection() {
               fontFamily: "var(--font-jakarta), var(--font-sans)",
               fontSize: "clamp(1.02rem, 1.2vw, 1.15rem)",
               lineHeight: 1.65,
-              color: "rgba(21, 21, 21, 0.62)",
+              color: "rgba(234, 232, 228, 0.65)",
               maxWidth: "540px",
               margin: 0,
             }}
@@ -256,51 +271,52 @@ export default function SectorsSection() {
           }
         }
 
-        /* The Pill Capsule with 3D physical feel on warm studio background */
+        /* The Pill Capsule with 3D physical feel on dark background */
         .sector-capsule-pill {
           display: inline-flex;
           align-items: center;
           gap: 10px;
           padding: 16px 34px;
           border-radius: 9999px;
-          background-color: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.07);
-          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+          background-color: rgba(255, 255, 255, 0.035);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
           font-family: var(--font-jakarta), var(--font-sans), sans-serif;
           font-size: clamp(0.98rem, 1.15vw, 1.15rem);
           font-weight: 700;
-          color: #1a1a1a;
+          color: #eae8e4;
           white-space: nowrap;
           cursor: pointer;
           transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           user-select: none;
           outline: none;
+          backdrop-filter: blur(10px);
         }
 
         .sector-dot {
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background-color: transparent;
+          background-color: rgba(255, 255, 255, 0.22);
           transition: all 0.3s ease;
           display: inline-block;
           flex-shrink: 0;
         }
 
-        /* Hover & Selected states: Dark obsidian with glowing red dot */
+        /* Hover & Selected states: Crimson glass with glowing red dot */
         .sector-capsule-pill:hover,
         .sector-capsule-pill.selected {
-          background-color: #151515;
+          background-color: rgba(230, 57, 70, 0.16);
           color: #ffffff;
           transform: translateY(-3px) scale(1.02);
-          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
-          border-color: #151515;
+          box-shadow: 0 12px 28px rgba(230, 57, 70, 0.28);
+          border-color: #E63946;
         }
 
         .sector-capsule-pill:hover .sector-dot,
         .sector-capsule-pill.selected .sector-dot {
           background-color: #E63946;
-          box-shadow: 0 0 10px #E63946;
+          box-shadow: 0 0 12px #E63946;
         }
       `}</style>
     </section>

@@ -64,7 +64,7 @@ export default function TwoHousesSection() {
     <section
       id="houses"
       style={{
-        backgroundColor: "#111111",
+        backgroundColor: "#0d0d0d",
         color: "#eae8e4",
         position: "relative",
         zIndex: 24,

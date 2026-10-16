@@ -69,10 +69,10 @@ export default function Navbar() {
           right: 0,
           zIndex: 50,
           transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          backgroundColor: scrolled ? "rgba(45, 45, 45, 0.95)" : "transparent",
+          backgroundColor: scrolled ? "rgba(13, 13, 13, 0.92)" : "transparent",
           backdropFilter: scrolled ? "blur(16px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(234, 232, 228, 0.12)" : "1px solid transparent",
+          borderBottom: scrolled ? "1px solid rgba(255, 255, 255, 0.08)" : "1px solid transparent",
           padding: scrolled ? "1rem 3.5rem" : "1.6rem 3.5rem",
           color: "#eae8e4",
         }}

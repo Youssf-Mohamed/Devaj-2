@@ -81,23 +81,41 @@ export default function StrategicOfferingsSection() {
     <section
       id="offerings"
       style={{
-        backgroundColor: "#F7F6F2",
-        color: "#151515",
+        backgroundColor: "#0d0d0d",
+        color: "#eae8e4",
         position: "relative",
         zIndex: 10,
-        padding: "40px 0 110px",
+        padding: "80px 0 130px",
         overflow: "hidden",
+        borderTop: "1px solid rgba(255, 255, 255, 0.08)",
       }}
     >
+      {/* Ambient Red Glow */}
+      <div
+        style={{
+          position: "absolute",
+          top: "25%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "900px",
+          height: "400px",
+          background: "radial-gradient(circle, rgba(230, 57, 70, 0.07) 0%, transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+
       <div
         style={{
           maxWidth: "1640px",
           margin: "0 auto",
           padding: "0 36px",
+          position: "relative",
+          zIndex: 2,
         }}
       >
         {/* =================================================================== */}
-        {/* 1. SECTION EDITORIAL CAPTION & HEADLINE (Monks Brand Aesthetic)     */}
+        {/* 1. SECTION EDITORIAL CAPTION & HEADLINE                             */}
         {/* =================================================================== */}
         <div style={{ marginBottom: "70px", maxWidth: "1280px" }}>
           <div
@@ -116,7 +134,7 @@ export default function StrategicOfferingsSection() {
           >
             <span>Devaj Group Strategic Craft</span>
             <span style={{ fontSize: "1.1rem" }}>•</span>
-            <span style={{ color: "rgba(21, 21, 21, 0.5)", fontWeight: 600 }}>Four Pillars of Impact</span>
+            <span style={{ color: "rgba(234, 232, 228, 0.5)", fontWeight: 600 }}>Four Pillars of Impact</span>
           </div>
 
           <h2
@@ -125,7 +143,7 @@ export default function StrategicOfferingsSection() {
               fontSize: "clamp(2.3rem, 4.2vw, 4.1rem)",
               lineHeight: 1.12,
               letterSpacing: "-0.02em",
-              color: "#111111",
+              color: "#ffffff",
               fontWeight: 700,
               fontStyle: "italic",
               margin: 0,
@@ -402,7 +420,7 @@ export default function StrategicOfferingsSection() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          color: rgba(21, 21, 21, 0.52);
+          color: rgba(234, 232, 228, 0.5);
           margin-bottom: 6px;
         }
 
@@ -420,7 +438,7 @@ export default function StrategicOfferingsSection() {
           font-weight: 800;
           line-height: 1.25;
           letter-spacing: -0.02em;
-          color: #111111;
+          color: #ffffff;
           margin: 0;
           transition: color 0.3s ease;
         }
@@ -434,7 +452,7 @@ export default function StrategicOfferingsSection() {
           width: 20px;
           height: 20px;
           border-radius: 50%;
-          background-color: #171717;
+          background-color: rgba(255, 255, 255, 0.1);
           color: #ffffff;
           display: inline-flex;
           align-items: center;
@@ -453,7 +471,7 @@ export default function StrategicOfferingsSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.8rem;
           line-height: 1.48;
-          color: rgba(21, 21, 21, 0.65);
+          color: rgba(234, 232, 228, 0.65);
           margin: 0;
           max-width: 300px;
         }
@@ -462,8 +480,8 @@ export default function StrategicOfferingsSection() {
         .offering-modal-backdrop {
           position: fixed;
           inset: 0;
-          background-color: rgba(0, 0, 0, 0.72);
-          backdrop-filter: blur(10px);
+          background-color: rgba(0, 0, 0, 0.82);
+          backdrop-filter: blur(14px);
           z-index: 9999;
           display: flex;
           align-items: center;
@@ -474,14 +492,15 @@ export default function StrategicOfferingsSection() {
 
         .offering-modal-content {
           position: relative;
-          background-color: #ffffff;
-          color: #151515;
+          background-color: #141414;
+          color: #eae8e4;
           max-width: 960px;
           width: 100%;
           max-height: 90vh;
           overflow-y: auto;
           border-radius: 28px;
-          box-shadow: 0 35px 90px rgba(0, 0, 0, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          box-shadow: 0 40px 100px rgba(0, 0, 0, 0.85), 0 0 40px rgba(230, 57, 70, 0.2);
           padding: 44px;
           animation: scaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -493,9 +512,9 @@ export default function StrategicOfferingsSection() {
           width: 42px;
           height: 42px;
           border-radius: 50%;
-          background-color: #f1efe9;
-          border: none;
-          color: #151515;
+          background-color: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          color: #eae8e4;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -505,7 +524,8 @@ export default function StrategicOfferingsSection() {
         }
 
         .modal-close-btn:hover {
-          background-color: #151515;
+          background-color: #E63946;
+          border-color: #E63946;
           color: #ffffff;
         }
 
@@ -527,7 +547,8 @@ export default function StrategicOfferingsSection() {
           border-radius: 18px;
           overflow: hidden;
           aspect-ratio: 1 / 1;
-          box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .modal-image {
@@ -554,11 +575,12 @@ export default function StrategicOfferingsSection() {
           gap: 8px;
           padding: 8px 18px;
           border-radius: 9999px;
-          background-color: #f1efe9;
+          background-color: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.12);
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.85rem;
           font-weight: 700;
-          color: #151515;
+          color: #eae8e4;
           width: fit-content;
         }
 
@@ -582,14 +604,14 @@ export default function StrategicOfferingsSection() {
           font-size: 1.85rem;
           font-weight: 800;
           letter-spacing: -0.025em;
-          color: #111111;
+          color: #ffffff;
           margin: 0 0 6px 0;
         }
 
         .modal-subtitle {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.95rem;
-          color: rgba(21, 21, 21, 0.55);
+          color: rgba(234, 232, 228, 0.55);
           font-weight: 600;
           margin: 0 0 16px 0;
         }
@@ -598,13 +620,13 @@ export default function StrategicOfferingsSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 1.02rem;
           line-height: 1.65;
-          color: rgba(21, 21, 21, 0.78);
+          color: rgba(234, 232, 228, 0.8);
           margin: 0 0 24px 0;
         }
 
         .modal-deliverables-box {
-          background-color: #faf9f6;
-          border: 1px solid rgba(0, 0, 0, 0.06);
+          background-color: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 16px;
           padding: 20px 22px;
           margin-bottom: 20px;
@@ -616,7 +638,7 @@ export default function StrategicOfferingsSection() {
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.08em;
-          color: #111111;
+          color: #ffffff;
           margin: 0 0 14px 0;
         }
 
@@ -636,7 +658,7 @@ export default function StrategicOfferingsSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.94rem;
           line-height: 1.5;
-          color: rgba(21, 21, 21, 0.85);
+          color: rgba(234, 232, 228, 0.85);
         }
 
         .list-check {
@@ -650,18 +672,18 @@ export default function StrategicOfferingsSection() {
           line-height: 1.5;
           padding: 12px 16px;
           border-left: 3px solid #E63946;
-          background-color: rgba(230, 57, 70, 0.04);
+          background-color: rgba(230, 57, 70, 0.08);
           border-radius: 0 10px 10px 0;
           margin-bottom: 28px;
         }
 
         .audience-label {
           font-weight: 700;
-          color: #111111;
+          color: #ffffff;
         }
 
         .audience-text {
-          color: rgba(21, 21, 21, 0.75);
+          color: rgba(234, 232, 228, 0.75);
         }
 
         .modal-cta-row {
@@ -686,26 +708,28 @@ export default function StrategicOfferingsSection() {
         }
 
         .modal-cta-btn.primary {
-          background-color: #171717;
-          color: #ffffff;
-          border: 1px solid #171717;
-        }
-
-        .modal-cta-btn.primary:hover {
           background-color: #25D366;
-          border-color: #25D366;
-          transform: translateY(-2px);
+          color: #ffffff;
+          border: 1px solid #25D366;
           box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
         }
 
+        .modal-cta-btn.primary:hover {
+          background-color: #22bf5b;
+          transform: translateY(-2px);
+          box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+        }
+
         .modal-cta-btn.secondary {
-          background-color: transparent;
-          color: #151515;
-          border: 1px solid rgba(0, 0, 0, 0.16);
+          background-color: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          color: #eae8e4;
         }
 
         .modal-cta-btn.secondary:hover {
-          background-color: #f1efe9;
+          background-color: rgba(255, 255, 255, 0.12);
+          border-color: rgba(255, 255, 255, 0.3);
+          color: #ffffff;
         }
 
         @keyframes fadeIn {

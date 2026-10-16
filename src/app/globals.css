@@ -202,9 +202,14 @@ body {
   will-change: opacity, transform;
 }
 
-.reveal-on-scroll.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
+.reveal-on-scroll.is-revealed,
+.reveal-on-scroll[data-revealed="true"] {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.reveal-on-scroll:hover {
+  opacity: 1 !important;
 }
 
 .reveal-from-left {
@@ -214,9 +219,14 @@ body {
   will-change: opacity, transform;
 }
 
-.reveal-from-left.is-revealed {
-  opacity: 1;
-  transform: translateX(0);
+.reveal-from-left.is-revealed,
+.reveal-from-left[data-revealed="true"] {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.reveal-from-left:hover {
+  opacity: 1 !important;
 }
 
 .reveal-from-right {
@@ -226,9 +236,14 @@ body {
   will-change: opacity, transform;
 }
 
-.reveal-from-right.is-revealed {
-  opacity: 1;
-  transform: translateX(0);
+.reveal-from-right.is-revealed,
+.reveal-from-right[data-revealed="true"] {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.reveal-from-right:hover {
+  opacity: 1 !important;
 }
 
 .reveal-scale {
@@ -238,9 +253,14 @@ body {
   will-change: opacity, transform;
 }
 
-.reveal-scale.is-revealed {
-  opacity: 1;
-  transform: scale(1);
+.reveal-scale.is-revealed,
+.reveal-scale[data-revealed="true"] {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.reveal-scale:hover {
+  opacity: 1 !important;
 }
 
 /* Stagger Delays for Cards */

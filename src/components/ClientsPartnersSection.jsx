@@ -17,7 +17,6 @@ import {
 export default function ClientsPartnersSection() {
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [activeFilter, setActiveFilter] = useState("all"); // 'all' | 'productions' | 'films'
-  const [hoveredBrand, setHoveredBrand] = useState(null);
   const videoRefs = useRef({});
 
   // Close modal on ESC key and lock body scroll
@@ -195,7 +194,6 @@ export default function ClientsPartnersSection() {
 
   // Handle Video Hover Physics
   const handleMouseEnterCard = (brandId) => {
-    setHoveredBrand(brandId);
     const video = videoRefs.current[brandId];
     if (video) {
       video.currentTime = 0;
@@ -207,7 +205,6 @@ export default function ClientsPartnersSection() {
   };
 
   const handleMouseLeaveCard = (brandId) => {
-    setHoveredBrand(null);
     const video = videoRefs.current[brandId];
     if (video) {
       video.pause();
@@ -319,22 +316,17 @@ export default function ClientsPartnersSection() {
         {/* 2. LOGO-CENTERED CARDS GRID WITH VIDEO ON HOVER                     */}
         {/* =================================================================== */}
         <div className="brands-showcase-grid">
-          {displayedBrands.map((brand, idx) => {
-            const isHovered = hoveredBrand === brand.id;
-
-            return (
-              <div
-                key={brand.id}
-                onClick={() => setSelectedBrand(brand)}
-                onMouseEnter={() => handleMouseEnterCard(brand.id)}
-                onMouseLeave={() => handleMouseLeaveCard(brand.id)}
-                className={`brand-cinema-card reveal-on-scroll delay-${(idx + 1) * 100} ${
-                  isHovered ? "is-hovered" : ""
-                }`}
-                role="button"
-                tabIndex={0}
-                aria-label={`Open project details for ${brand.name}`}
-              >
+          {displayedBrands.map((brand, idx) => (
+            <div
+              key={brand.id}
+              onClick={() => setSelectedBrand(brand)}
+              onMouseEnter={() => handleMouseEnterCard(brand.id)}
+              onMouseLeave={() => handleMouseLeaveCard(brand.id)}
+              className={`brand-cinema-card reveal-on-scroll delay-${(idx + 1) * 100}`}
+              role="button"
+              tabIndex={0}
+              aria-label={`Open project details for ${brand.name}`}
+            >
                 {/* 1. Background Video Preview (Fades in on hover) */}
                 <video
                   ref={(el) => (videoRefs.current[brand.id] = el)}
@@ -482,8 +474,7 @@ export default function ClientsPartnersSection() {
                   </span>
                 </div>
               </div>
-            );
-          })}
+          ))}
         </div>
       </div>
 

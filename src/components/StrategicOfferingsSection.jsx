@@ -5,7 +5,6 @@ import { ArrowUpRight, CheckCircle2, Film, Clapperboard, Camera, Radio, X, Messa
 
 export default function StrategicOfferingsSection() {
   const [selectedOffering, setSelectedOffering] = useState(null);
-  const [hoveredCard, setHoveredCard] = useState(null);
 
   const offerings = [
     {
@@ -142,16 +141,13 @@ export default function StrategicOfferingsSection() {
         {/* =================================================================== */}
         <div className="offerings-grid">
           {offerings.map((item, idx) => {
-            const isHovered = hoveredCard === item.id;
             const isSelected = selectedOffering?.id === item.id;
 
             return (
               <div
                 key={item.id}
                 onClick={() => setSelectedOffering(item)}
-                onMouseEnter={() => setHoveredCard(item.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-                className={`offering-card card-col-${idx + 1} ${isHovered ? "hovered" : ""} ${isSelected ? "selected" : ""} reveal-on-scroll delay-${(idx + 1) * 100}`}
+                className={`offering-card card-col-${idx + 1} ${isSelected ? "selected" : ""} reveal-on-scroll delay-${(idx + 1) * 100}`}
               >
                 {/* Top-Right Number Overlapping Image (01, 02, 03, 04) */}
                 <div className="card-number-badge">

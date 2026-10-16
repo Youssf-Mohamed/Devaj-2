@@ -24,8 +24,7 @@ export default function Home() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-revealed");
-          } else {
-            entry.target.classList.remove("is-revealed");
+            entry.target.setAttribute("data-revealed", "true");
           }
         });
       },

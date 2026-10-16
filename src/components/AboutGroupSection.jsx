@@ -344,8 +344,8 @@ export default function AboutGroupSection() {
           left: 22px;
           display: flex;
           align-items: center;
-          gap: 12px;
-          padding: 10px 18px;
+          gap: 14px;
+          padding: 10px 20px;
           border-radius: 9999px;
           background: rgba(18, 18, 18, 0.65);
           backdrop-filter: blur(12px);
@@ -355,7 +355,7 @@ export default function AboutGroupSection() {
         }
 
         .about-badge-logo-img {
-          height: 28px;
+          height: 32px;
           width: auto;
           display: block;
           object-fit: contain;

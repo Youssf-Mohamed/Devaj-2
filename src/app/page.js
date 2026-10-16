@@ -87,19 +87,19 @@ export default function Home() {
       {/* 4. Strategic Service Offerings */}
       <StrategicOfferingsSection />
 
-      {/* 5. The Two Creative Houses: Devaj Production & Devaj Film */}
+      {/* 5. The Two Creative Houses: Devaj Production & Devaj Film (Image 1) */}
       <TwoHousesSection />
 
-      {/* 6. Which House Fits Your Story: Interactive Project Calculator & Booking */}
-      <ProjectCalculatorSection />
-
-      {/* 7. Sectors We Serve */}
-      <SectorsSection />
-
-      {/* 8. Brands We Have Delivered For */}
+      {/* 6. Brands We Have Delivered For: Brand Archive & Flagship Partners (Image 2) */}
       <ClientsPartnersSection />
 
-      {/* 9. Official Devaj Group Contact & Footer */}
+      {/* 7. Which House Fits Your Story: Interactive Project Calculator & Booking (Image 3) */}
+      <ProjectCalculatorSection />
+
+      {/* 8. Sectors We Serve (Image 4) */}
+      <SectorsSection />
+
+      {/* 9. Official Devaj Group Contact & Footer (Image 5) */}
       <footer
         id="connect"
         style={{
@@ -107,8 +107,12 @@ export default function Home() {
           color: "#eae8e4",
           position: "relative",
           zIndex: 30,
+          marginTop: "-64px",
+          borderTopLeftRadius: "52px",
+          borderTopRightRadius: "52px",
+          boxShadow: "0 -35px 80px rgba(0, 0, 0, 0.5), 0 -12px 30px rgba(0, 0, 0, 0.3)",
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
-          padding: "110px 48px 48px",
+          padding: "120px 48px 48px",
         }}
       >
         <div style={{ maxWidth: "1560px", margin: "0 auto" }}>
@@ -302,7 +306,7 @@ export default function Home() {
               </h4>
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", fontSize: "0.95rem" }}>
                 <a href="#offerings" style={{ color: "rgba(234, 232, 228, 0.7)", textDecoration: "none" }}>About The Group</a>
-                <a href="#houses" style={{ color: "rgba(234, 232, 228, 0.7)", textDecoration: "none" }}>Our Work</a>
+                <a href="#clients" style={{ color: "rgba(234, 232, 228, 0.7)", textDecoration: "none" }}>Our Work</a>
                 <a href="#sectors" style={{ color: "rgba(234, 232, 228, 0.7)", textDecoration: "none" }}>Our Philosophy</a>
                 <a href="mailto:careers@devajgroup.com" style={{ color: "rgba(234, 232, 228, 0.7)", textDecoration: "none" }}>Careers</a>
               </div>

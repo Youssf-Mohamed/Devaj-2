@@ -137,28 +137,28 @@ export default function ClientsPartnersSection() {
       logoType: "abrag",
     },
     {
-      id: "elghandour",
-      name: "El-Ghandour Medical",
-      tagline: "Healthcare Group",
-      badgeText: "MEDICAL GROUP",
+      id: "schon",
+      name: "Schön Clinics",
+      tagline: "Premier Medical & Aesthetic Group",
+      badgeText: "CLINICAL GROUP",
       isFirstPartner: false,
-      sector: "Healthcare & Medicine",
+      sector: "Healthcare & Aesthetics",
       house: "Devaj Productions",
       houseId: "productions",
       iconHouse: Clapperboard,
-      projectTitle: "El-Ghandour Medical Group — Compassion in Every Frame",
+      projectTitle: "Schön Clinics — Precision Medicine & Aesthetics",
       projectScope:
-        "Human-centric healthcare storytelling, sterile surgical suite filming, patient care narratives, and doctor profile videos.",
+        "Human-centric healthcare storytelling, modern clinical suite cinematography, doctor profile videos, and aesthetic patient transformations.",
       image: "/images/clients/elghandour-medical.jpg",
       videoUrl: "/videos/devaj-production.mp4",
       deliverables: [
         "Brand Identity & Corporate Hospital Film",
-        "Medical Operating Room Safe-Capture Cinematography",
-        "Patient Testimonial Docu-Stories",
+        "Clinical Sterile Suite Safe-Capture Cinematography",
+        "Patient Transformation Docu-Stories",
         "Full Social Media Video Suite for Clinics & Specialists",
       ],
-      highlight: "Positioned the medical group as a premier trusted healthcare destination.",
-      logoType: "ghandour",
+      highlight: "Positioned Schön Clinics as Egypt's premier trusted destination for modern medicine and aesthetic care.",
+      logoType: "schon",
     },
     {
       id: "clorox",
@@ -359,48 +359,19 @@ export default function ClientsPartnersSection() {
                 <div className="card-center-logo-box">
                   {/* Porsche Crest */}
                   {brand.logoType === "porsche" && (
-                    <div className="logo-porsche-wrap">
-                      <svg viewBox="0 0 80 100" width="62" height="78" className="porsche-crest-svg">
-                        <defs>
-                          <linearGradient id="porscheGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#d4af37" />
-                            <stop offset="50%" stopColor="#f3e5ab" />
-                            <stop offset="100%" stopColor="#aa7c11" />
-                          </linearGradient>
-                        </defs>
-                        <path
-                          d="M40 4 C62 4, 76 16, 76 34 C76 64, 40 96, 40 96 C40 96, 4 64, 4 34 C4 16, 18 4, 40 4 Z"
-                          fill="url(#porscheGold)"
-                          stroke="#111111"
-                          strokeWidth="2"
-                        />
-                        <path d="M40 8 L40 92" stroke="#111111" strokeWidth="1.5" />
-                        <path d="M12 36 L68 36" stroke="#111111" strokeWidth="1.5" />
-                        <rect x="22" y="16" width="36" height="8" rx="2" fill="#111111" />
-                        <text
-                          x="40"
-                          y="22"
-                          fill="#d4af37"
-                          fontSize="6"
-                          fontWeight="bold"
-                          textAnchor="middle"
-                          letterSpacing="0.8"
-                        >
-                          PORSCHE
-                        </text>
-                        {/* Red and Black stripes */}
-                        <rect x="14" y="42" width="22" height="5" fill="#E63946" />
-                        <rect x="14" y="52" width="22" height="5" fill="#111111" />
-                        <rect x="44" y="42" width="22" height="5" fill="#111111" />
-                        <rect x="44" y="52" width="22" height="5" fill="#E63946" />
-                      </svg>
+                    <div className="logo-brand-center-wrap">
+                      <img
+                        src="/images/clients/logos/porsche.png"
+                        alt="Porsche Egypt"
+                        className="brand-logo-img porsche-crest-img"
+                      />
                       <span className="porsche-sub-text">PORSCHE EGYPT</span>
                     </div>
                   )}
 
                   {/* Eskan Misr Logo */}
                   {brand.logoType === "eskan" && (
-                    <div className="logo-eskan-wrap">
+                    <div className="logo-brand-center-wrap">
                       <span className="eskan-main-text">Eskan Misr</span>
                       <span className="eskan-arabic-text">إسـكـان مـصـر</span>
                     </div>
@@ -408,54 +379,51 @@ export default function ClientsPartnersSection() {
 
                   {/* The Capital Logo */}
                   {brand.logoType === "capital" && (
-                    <div className="logo-capital-box">
-                      <div className="capital-feather-mark">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="#c4a962">
-                          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" />
-                        </svg>
+                    <div className="logo-brand-center-wrap">
+                      <div className="capital-badge-card">
+                        <img
+                          src="/images/clients/logos/the-capital-cropped.png"
+                          alt="The Capital"
+                          className="capital-logo-img"
+                        />
                       </div>
-                      <span className="capital-title">THE CAPITAL</span>
-                      <span className="capital-subtitle">ذا كابيتال</span>
                     </div>
                   )}
 
                   {/* ABRAG Logo */}
                   {brand.logoType === "abrag" && (
-                    <div className="logo-abrag-box">
-                      <div className="abrag-emblem">
-                        <svg viewBox="0 0 40 40" width="38" height="38" fill="none">
-                          <path
-                            d="M20 4L4 36H14L20 22L26 36H36L20 4Z"
-                            fill="#ffffff"
-                          />
-                          <rect x="18" y="27" width="4" height="4" fill="#E63946" />
-                        </svg>
+                    <div className="logo-brand-center-wrap">
+                      <img
+                        src="/images/clients/logos/abrag-transparent.png"
+                        alt="ABRAG Developments"
+                        className="brand-logo-img abrag-mark-img"
+                      />
+                      <div className="abrag-text-group">
+                        <span className="abrag-name-text">ABRAG</span>
+                        <span className="abrag-sub-text">DEVELOPMENTS</span>
                       </div>
-                      <span className="abrag-text">ABRAG</span>
-                      <span className="abrag-sub">DEVELOPMENTS</span>
                     </div>
                   )}
 
-                  {/* El-Ghandour Medical Logo */}
-                  {brand.logoType === "ghandour" && (
-                    <div className="logo-ghandour-box">
-                      <div className="ghandour-cross">
-                        <svg viewBox="0 0 32 32" width="30" height="30" fill="none">
-                          <rect x="13" y="4" width="6" height="24" rx="2" fill="#25D366" />
-                          <rect x="4" y="13" width="24" height="6" rx="2" fill="#25D366" />
-                        </svg>
-                      </div>
-                      <span className="ghandour-title">EL-GHANDOUR</span>
-                      <span className="ghandour-sub">MEDICAL GROUP</span>
+                  {/* Schön Clinics Logo */}
+                  {brand.logoType === "schon" && (
+                    <div className="logo-brand-center-wrap">
+                      <img
+                        src="/images/clients/logos/schon-clinics.png"
+                        alt="Schön Clinics"
+                        className="brand-logo-img schon-logo-img"
+                      />
                     </div>
                   )}
 
                   {/* Clorox Logo */}
                   {brand.logoType === "clorox" && (
-                    <div className="logo-clorox-box">
-                      <div className="clorox-diamond-badge">
-                        <span className="clorox-text">CLOROX</span>
-                      </div>
+                    <div className="logo-brand-center-wrap">
+                      <img
+                        src="/images/clients/logos/clorox.png"
+                        alt="Clorox"
+                        className="brand-logo-img clorox-diamond-img"
+                      />
                     </div>
                   )}
                 </div>
@@ -548,8 +516,53 @@ export default function ClientsPartnersSection() {
 
               {/* Right Column: Narrative, Deliverables & Actions */}
               <div className="modal-narrative-col">
-                <span className="modal-eyebrow-red">{selectedBrand.tagline}</span>
-                <h3 className="modal-title-serif">{selectedBrand.name}</h3>
+                <div className="modal-header-brand-flex">
+                  <div>
+                    <span className="modal-eyebrow-red">{selectedBrand.tagline}</span>
+                    <h3 className="modal-title-serif">{selectedBrand.name}</h3>
+                  </div>
+                  {/* Official Brand Logo Thumbnail in Modal */}
+                  <div className="modal-brand-emblem-box">
+                    {selectedBrand.logoType === "porsche" && (
+                      <img
+                        src="/images/clients/logos/porsche.png"
+                        alt="Porsche Egypt"
+                        className="modal-emblem-img modal-porsche-crest"
+                      />
+                    )}
+                    {selectedBrand.logoType === "capital" && (
+                      <img
+                        src="/images/clients/logos/the-capital-cropped.png"
+                        alt="The Capital"
+                        className="modal-emblem-img modal-capital-badge"
+                      />
+                    )}
+                    {selectedBrand.logoType === "abrag" && (
+                      <div className="modal-abrag-pill">
+                        <img
+                          src="/images/clients/logos/abrag-transparent.png"
+                          alt="ABRAG Developments"
+                          style={{ height: "26px", width: "auto" }}
+                        />
+                        <span className="modal-abrag-pill-text">ABRAG</span>
+                      </div>
+                    )}
+                    {selectedBrand.logoType === "schon" && (
+                      <img
+                        src="/images/clients/logos/schon-clinics.png"
+                        alt="Schön Clinics"
+                        className="modal-emblem-img modal-schon-mark"
+                      />
+                    )}
+                    {selectedBrand.logoType === "clorox" && (
+                      <img
+                        src="/images/clients/logos/clorox.png"
+                        alt="Clorox"
+                        className="modal-emblem-img modal-clorox-mark"
+                      />
+                    )}
+                  </div>
+                </div>
                 <h4 className="modal-project-subhead">{selectedBrand.projectTitle}</h4>
 
                 <p className="modal-body-copy">{selectedBrand.projectScope}</p>
@@ -803,22 +816,40 @@ export default function ClientsPartnersSection() {
           gap: 12px;
         }
 
-        .porsche-sub-text {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.88rem;
-          font-weight: 800;
-          letter-spacing: 0.18em;
-          color: #ffffff;
-          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .logo-eskan-wrap {
+        /* Universal Brand Logo Center Wrap */
+        .logo-brand-center-wrap {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 6px;
+          justify-content: center;
+          gap: 12px;
+          text-align: center;
         }
 
+        .brand-logo-img {
+          display: block;
+          object-fit: contain;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+        }
+
+        /* 1. Porsche */
+        .porsche-crest-img {
+          height: 100px;
+          width: auto;
+          max-width: 135px;
+          filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.85));
+        }
+
+        .porsche-sub-text {
+          font-family: var(--font-jakarta), var(--font-sans);
+          font-size: 0.86rem;
+          font-weight: 800;
+          letter-spacing: 0.2em;
+          color: #ffffff;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        /* 2. Eskan Misr */
         .eskan-main-text {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 2.1rem;
@@ -835,101 +866,141 @@ export default function ClientsPartnersSection() {
           letter-spacing: 0.05em;
         }
 
-        .logo-capital-box {
+        /* 3. The Capital (Emerald & Gold Emblem Card) */
+        .capital-badge-card {
+          border-radius: 14px;
+          overflow: hidden;
+          border: 1px solid rgba(212, 175, 55, 0.45);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 20px rgba(45, 80, 41, 0.4);
+          transition: all 0.35s ease;
           display: flex;
-          flex-direction: column;
           align-items: center;
           justify-content: center;
-          background: rgba(38, 56, 42, 0.85);
-          border: 1px solid rgba(196, 169, 98, 0.3);
-          border-radius: 12px;
-          padding: 22px 28px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+          background: #2d5029;
         }
 
-        .capital-title {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 1.05rem;
-          font-weight: 800;
-          letter-spacing: 0.1em;
-          color: #ffffff;
-          margin-top: 6px;
+        .brand-cinema-card:hover .capital-badge-card {
+          border-color: rgba(212, 175, 55, 0.8);
+          box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 28px rgba(212, 175, 55, 0.35);
         }
 
-        .capital-subtitle {
-          font-size: 0.82rem;
-          color: #c4a962;
-          font-weight: 700;
+        .capital-logo-img {
+          height: 80px;
+          width: auto;
+          max-width: 215px;
+          display: block;
+          object-fit: contain;
         }
 
-        .logo-abrag-box {
+        /* 4. ABRAG Developments */
+        .abrag-mark-img {
+          height: 68px;
+          width: auto;
+          filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.9));
+        }
+
+        .abrag-text-group {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 6px;
+          gap: 2px;
         }
 
-        .abrag-text {
+        .abrag-name-text {
           font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 1.6rem;
+          font-size: 1.25rem;
           font-weight: 900;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.16em;
           color: #ffffff;
-          text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+          text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
         }
 
-        .abrag-sub {
-          font-size: 0.7rem;
+        .abrag-sub-text {
+          font-size: 0.68rem;
           font-weight: 700;
-          letter-spacing: 0.22em;
-          color: rgba(234, 232, 228, 0.6);
+          letter-spacing: 0.24em;
+          color: rgba(234, 232, 228, 0.65);
         }
 
-        .logo-ghandour-box {
+        /* 5. Schön Clinics */
+        .schon-logo-img {
+          width: clamp(210px, 17vw, 255px);
+          height: auto;
+          max-height: 94px;
+          filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.9));
+        }
+
+        /* 6. Clorox */
+        .clorox-diamond-img {
+          height: 84px;
+          width: auto;
+          max-width: 195px;
+          filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.75));
+          transform: rotate(-2deg);
+        }
+
+        /* Modal Brand Emblem Header */
+        .modal-header-brand-flex {
           display: flex;
-          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 16px;
+          margin-bottom: 6px;
+        }
+
+        .modal-brand-emblem-box {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .modal-emblem-img {
+          display: block;
+          object-fit: contain;
+        }
+
+        .modal-porsche-crest {
+          height: 48px;
+          width: auto;
+          filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+        }
+
+        .modal-capital-badge {
+          height: 44px;
+          width: auto;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .modal-abrag-pill {
+          background: #0d0d0d;
+          padding: 6px 14px;
+          border-radius: 8px;
+          display: inline-flex;
           align-items: center;
           gap: 8px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .ghandour-title {
+        .modal-abrag-pill-text {
+          color: #ffffff;
           font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 1.35rem;
+          font-size: 0.8rem;
           font-weight: 800;
-          letter-spacing: 0.08em;
-          color: #ffffff;
-          text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+          letter-spacing: 0.12em;
         }
 
-        .ghandour-sub {
-          font-size: 0.72rem;
-          font-weight: 700;
-          letter-spacing: 0.18em;
-          color: #25D366;
+        .modal-schon-mark {
+          height: 38px;
+          width: auto;
+          filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
         }
 
-        .logo-clorox-box {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .clorox-diamond-badge {
-          background: #0033a0;
-          padding: 16px 28px;
-          border-radius: 8px;
-          border: 2px solid #ffffff;
-          box-shadow: 0 8px 24px rgba(0, 51, 160, 0.5);
-          transform: rotate(-3deg);
-        }
-
-        .clorox-text {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 1.5rem;
-          font-weight: 900;
-          letter-spacing: 0.04em;
-          color: #ffffff;
-          display: block;
+        .modal-clorox-mark {
+          height: 38px;
+          width: auto;
+          filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
         }
 
         /* Card Bottom Bar (OPEN PROJECT +) */
@@ -1115,6 +1186,7 @@ export default function ClientsPartnersSection() {
         .modal-narrative-col {
           display: flex;
           flex-direction: column;
+          padding-right: 64px;
         }
 
         .modal-eyebrow-red {
@@ -1293,6 +1365,9 @@ export default function ClientsPartnersSection() {
           .modal-white-grid {
             grid-template-columns: 1fr;
             gap: 28px;
+          }
+          .modal-narrative-col {
+            padding-right: 0;
           }
         }
 

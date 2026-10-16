@@ -331,17 +331,17 @@ export default function StrategicOfferingsSection() {
           font-size: clamp(3.4rem, 4.4vw, 4.8rem);
           font-weight: 800;
           line-height: 1;
-          color: #ffffff;
+          color: #E63946;
           letter-spacing: -0.04em;
-          text-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
-          transition: transform 0.4s ease, color 0.4s ease;
+          text-shadow: 0 4px 18px rgba(230, 57, 70, 0.28);
+          transition: transform 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
           display: block;
         }
 
         .offering-card:hover .card-number-text {
           transform: translateY(-3px) scale(1.03);
-          color: #ffffff;
-          text-shadow: 0 8px 24px rgba(230, 57, 70, 0.35);
+          color: #ff4757;
+          text-shadow: 0 8px 26px rgba(230, 57, 70, 0.5);
         }
 
         /* Card Inner Box */
@@ -544,7 +544,7 @@ export default function StrategicOfferingsSection() {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 2.4rem;
           font-weight: 800;
-          color: rgba(255, 255, 255, 0.9);
+          color: #E63946;
           text-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 

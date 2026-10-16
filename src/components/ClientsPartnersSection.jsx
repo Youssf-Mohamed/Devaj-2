@@ -275,11 +275,15 @@ export default function ClientsPartnersSection() {
         backgroundColor: "#0d0d0d",
         color: "#eae8e4",
         position: "relative",
-        zIndex: 26,
-        padding: selectedBrand ? "105px 0 90px" : "110px 0 135px",
+        zIndex: 27,
+        marginTop: "-52px",
+        borderTopLeftRadius: "52px",
+        borderTopRightRadius: "52px",
+        boxShadow: "0 -35px 80px rgba(0, 0, 0, 0.45), 0 -12px 30px rgba(0, 0, 0, 0.25)",
+        borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+        padding: selectedBrand ? "105px 0 90px" : "120px 0 135px",
         scrollMarginTop: "90px",
         overflow: "hidden",
-        borderTop: "1px solid rgba(255, 255, 255, 0.08)",
         transition: "padding 0.35s ease",
       }}
     >

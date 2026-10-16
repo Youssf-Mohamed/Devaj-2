@@ -41,20 +41,20 @@ export default function SectorsSection() {
     <section
       id="sectors"
       style={{
-        backgroundColor: "#0d0d0d",
-        color: "#eae8e4",
+        backgroundColor: "#ffffff",
+        color: "#111111",
         position: "relative",
         zIndex: 26,
         marginTop: "-64px",
         borderTopLeftRadius: "52px",
         borderTopRightRadius: "52px",
-        boxShadow: "0 -35px 80px rgba(0, 0, 0, 0.55), 0 -12px 30px rgba(0, 0, 0, 0.35)",
-        borderTop: "1px solid rgba(255, 255, 255, 0.08)",
-        padding: "120px 0 145px",
+        boxShadow: "0 -35px 80px rgba(0, 0, 0, 0.45), 0 -12px 30px rgba(0, 0, 0, 0.2)",
+        borderTop: "1px solid rgba(0, 0, 0, 0.06)",
+        padding: "120px 0 155px",
         overflow: "hidden",
       }}
     >
-      {/* Subtle Ambient Red Glow - Perfectly Circular & Feathered (Zero Edge Clipping) */}
+      {/* Subtle Ambient Glow for White Theme */}
       <div
         style={{
           position: "absolute",
@@ -65,7 +65,7 @@ export default function SectorsSection() {
           height: "900px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, rgba(230, 57, 70, 0.03) 35%, rgba(230, 57, 70, 0) 65%)",
+            "radial-gradient(circle, rgba(230, 57, 70, 0.035) 0%, rgba(230, 57, 70, 0.01) 35%, transparent 65%)",
           pointerEvents: "none",
           zIndex: 0,
         }}
@@ -112,7 +112,7 @@ export default function SectorsSection() {
                 fontSize: "clamp(2.5rem, 4.5vw, 4.4rem)",
                 lineHeight: 1.1,
                 letterSpacing: "-0.025em",
-                color: "#ffffff",
+                color: "#111111",
                 margin: 0,
                 fontWeight: 700,
                 fontStyle: "italic",
@@ -128,7 +128,7 @@ export default function SectorsSection() {
               fontFamily: "var(--font-jakarta), var(--font-sans)",
               fontSize: "clamp(1.02rem, 1.2vw, 1.15rem)",
               lineHeight: 1.65,
-              color: "rgba(234, 232, 228, 0.65)",
+              color: "rgba(17, 17, 17, 0.72)",
               maxWidth: "540px",
               margin: 0,
             }}
@@ -280,54 +280,67 @@ export default function SectorsSection() {
           }
         }
 
-        /* The Pill Capsule with 3D physical feel on dark background */
+        /* The Pill Capsule tailored for clean white background */
         .sector-capsule-pill {
           display: inline-flex;
           align-items: center;
           gap: 10px;
           padding: 16px 34px;
           border-radius: 9999px;
-          background-color: rgba(255, 255, 255, 0.035);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+          background-color: #f6f5f1;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
           font-family: var(--font-jakarta), var(--font-sans), sans-serif;
           font-size: clamp(0.98rem, 1.15vw, 1.15rem);
           font-weight: 700;
-          color: #eae8e4;
+          color: #1a1a1a;
           white-space: nowrap;
           cursor: pointer;
           transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           user-select: none;
           outline: none;
-          backdrop-filter: blur(10px);
         }
 
         .sector-dot {
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background-color: rgba(255, 255, 255, 0.22);
+          background-color: rgba(0, 0, 0, 0.22);
           transition: all 0.3s ease;
           display: inline-block;
           flex-shrink: 0;
         }
 
-        /* Hover & Selected states: Crimson glass with glowing red dot */
-        .sector-capsule-pill:hover,
+        /* Hover: sleek obsidian pill with glowing red dot */
+        .sector-capsule-pill:hover {
+          position: relative;
+          z-index: 20;
+          background-color: #111111;
+          color: #ffffff;
+          transform: translateY(-4px) scale(1.02);
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+          border-color: #111111;
+        }
+
+        .sector-capsule-pill:hover .sector-dot {
+          background-color: #E63946;
+          box-shadow: 0 0 10px #E63946;
+        }
+
+        /* Selected: vibrant crimson pill */
         .sector-capsule-pill.selected {
           position: relative;
           z-index: 20;
-          background-color: rgba(230, 57, 70, 0.16);
+          background-color: #E63946;
           color: #ffffff;
           transform: translateY(-4px) scale(1.02);
-          box-shadow: 0 10px 24px rgba(230, 57, 70, 0.35);
+          box-shadow: 0 10px 26px rgba(230, 57, 70, 0.35);
           border-color: #E63946;
         }
 
-        .sector-capsule-pill:hover .sector-dot,
         .sector-capsule-pill.selected .sector-dot {
-          background-color: #E63946;
-          box-shadow: 0 0 12px #E63946;
+          background-color: #ffffff;
+          box-shadow: 0 0 10px #ffffff;
         }
       `}</style>
     </section>

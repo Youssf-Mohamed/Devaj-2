@@ -38,7 +38,7 @@ export default function ClientsPartnersSection() {
     };
   }, [selectedBrand]);
 
-  // 6 Flagship Partner Brands matching user's exact screenshot & portfolio
+  // 8 Flagship Partner Brands matching user's exact screenshot (4 Films + 4 Productions)
   const allBrands = [
     {
       id: "porsche",
@@ -137,34 +137,34 @@ export default function ClientsPartnersSection() {
       logoType: "abrag",
     },
     {
-      id: "schon",
-      name: "Schön Clinics",
-      tagline: "Premier Medical & Aesthetic Group",
-      badgeText: "CLINICAL GROUP",
+      id: "el-ghandour",
+      name: "El-Ghandour Medical",
+      tagline: "Medical Group & Specialized Clinics",
+      badgeText: "MEDICAL GROUP",
       isFirstPartner: false,
-      sector: "Healthcare & Aesthetics",
+      sector: "Healthcare & Specialized Clinics",
       house: "Devaj Productions",
       houseId: "productions",
       iconHouse: Clapperboard,
-      projectTitle: "Schön Clinics — Precision Medicine & Aesthetics",
+      projectTitle: "El-Ghandour Medical — Clinical Excellence & Compassionate Care",
       projectScope:
-        "Human-centric healthcare storytelling, modern clinical suite cinematography, doctor profile videos, and aesthetic patient transformations.",
+        "Sterile surgical suite cinematography, specialist physician profiles, patient recovery documentary stories, and health communications.",
       image: "/images/clients/elghandour-medical.jpg",
       videoUrl: "/videos/devaj-production.mp4",
       deliverables: [
-        "Brand Identity & Corporate Hospital Film",
-        "Clinical Sterile Suite Safe-Capture Cinematography",
-        "Patient Transformation Docu-Stories",
-        "Full Social Media Video Suite for Clinics & Specialists",
+        "Hospital & Clinical Suite Cinematic Brand Film",
+        "Surgeon & Specialist High-Definition Profiles",
+        "Patient Journey Narrative Docu-Series",
+        "Public Awareness Medical Social Campaign",
       ],
-      highlight: "Positioned Schön Clinics as Egypt's premier trusted destination for modern medicine and aesthetic care.",
-      logoType: "schon",
+      highlight: "Expanded digital patient trust and established authoritative clinical leadership across Egypt.",
+      logoType: "ghandour",
     },
     {
       id: "clorox",
       name: "Clorox",
       tagline: "Global FMCG Commercial",
-      badgeText: "CONSUMER GOODS",
+      badgeText: "CONSUMER",
       isFirstPartner: false,
       sector: "FMCG & Consumer Goods",
       house: "Devaj Productions",
@@ -183,6 +183,54 @@ export default function ClientsPartnersSection() {
       ],
       highlight: "High-retention commercial campaign broadcasted across major television networks.",
       logoType: "clorox",
+    },
+    {
+      id: "cpc",
+      name: "CPC Industrial",
+      tagline: "Building Products & Manufacturing",
+      badgeText: "INDUSTRIAL",
+      isFirstPartner: false,
+      sector: "Industrial & Manufacturing",
+      house: "Devaj Productions",
+      houseId: "productions",
+      iconHouse: Clapperboard,
+      projectTitle: "CPC Industrial — Heavy Engineering & Building Systems",
+      projectScope:
+        "Heavy industrial facility cinematography, robotic manufacturing lines, supply chain logistics, and global investor film productions.",
+      image: "/images/clients/eskan-misr.jpg",
+      videoUrl: "/videos/hero-reel.mp4",
+      deliverables: [
+        "Enterprise Industrial Facility Showcase Film",
+        "High-Precision Heavy Machinery Macro Cinematography",
+        "Licensed 5.4K Aerial Drone Survey of Manufacturing Hubs",
+        "Global Trade Fair & Investor Visual Reel",
+      ],
+      highlight: "Premiered at international industrial and building technology exhibitions.",
+      logoType: "cpc",
+    },
+    {
+      id: "schon",
+      name: "Schön Clinics",
+      tagline: "Precision Dental & Aesthetic Center",
+      badgeText: "DENTAL CARE",
+      isFirstPartner: false,
+      sector: "Healthcare & Aesthetics",
+      house: "Devaj Productions",
+      houseId: "productions",
+      iconHouse: Clapperboard,
+      projectTitle: "Schön Clinics — Precision Medicine & Aesthetics",
+      projectScope:
+        "Human-centric healthcare storytelling, modern clinical suite cinematography, doctor profile videos, and aesthetic patient transformations.",
+      image: "/images/clients/elghandour-medical.jpg",
+      videoUrl: "/videos/devaj-film.mp4",
+      deliverables: [
+        "Brand Identity & Luxury Aesthetic Clinic Film",
+        "Sterile Clinical Suite Cinematography",
+        "Aesthetic Doctor Transformation Profiles",
+        "High-Velocity Social Media Reel Suite",
+      ],
+      highlight: "Positioned Schön Clinics as Egypt's premier trusted destination for modern medicine and aesthetic care.",
+      logoType: "schon",
     },
   ];
 
@@ -281,7 +329,7 @@ export default function ClientsPartnersSection() {
             </h2>
           </div>
 
-          {/* Filter Pills (Matching User Screenshot) */}
+          {/* Filter Pills (Matching User Screenshot: 8 All, 4 Productions, 4 Films) */}
           <div className="filter-pills-row">
             <button
               type="button"
@@ -289,7 +337,7 @@ export default function ClientsPartnersSection() {
               className={`filter-btn ${activeFilter === "all" ? "active" : ""}`}
             >
               <span>ALL WORK</span>
-              <span className="filter-count">6</span>
+              <span className="filter-count">8</span>
             </button>
 
             <button
@@ -298,7 +346,7 @@ export default function ClientsPartnersSection() {
               className={`filter-btn ${activeFilter === "productions" ? "active" : ""}`}
             >
               <span>DEVAJ PRODUCTIONS</span>
-              <span className="filter-count">2</span>
+              <span className="filter-count">4</span>
             </button>
 
             <button
@@ -313,10 +361,10 @@ export default function ClientsPartnersSection() {
         </div>
 
         {/* =================================================================== */}
-        {/* 2. LOGO-CENTERED CARDS GRID WITH VIDEO ON HOVER                     */}
+        {/* 2. 4x2 ARCHITECTURAL BENTO SHOWCASE GRID (Matching User Screenshot) */}
         {/* =================================================================== */}
         <div className="brands-showcase-grid">
-          {displayedBrands.map((brand, idx) => (
+          {displayedBrands.map((brand) => (
             <div
               key={brand.id}
               onClick={() => setSelectedBrand(brand)}
@@ -327,121 +375,98 @@ export default function ClientsPartnersSection() {
               tabIndex={0}
               aria-label={`Open project details for ${brand.name}`}
             >
-                {/* 1. Background Video Preview (Fades in on hover) */}
-                <video
-                  ref={(el) => (videoRefs.current[brand.id] = el)}
-                  src={brand.videoUrl}
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  className="card-hover-video"
-                />
+              {/* 1. Background Video Preview (Fades in on hover) */}
+              <video
+                ref={(el) => (videoRefs.current[brand.id] = el)}
+                src={brand.videoUrl}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="card-hover-video"
+              />
 
-                {/* 2. Static Background Image (When not hovering) */}
-                <div
-                  className="card-static-bg"
-                  style={{ backgroundImage: `url(${brand.image})` }}
-                />
+              {/* 2. Static Background Image (When not hovering) */}
+              <div
+                className="card-static-bg"
+                style={{ backgroundImage: `url(${brand.image})` }}
+              />
 
-                {/* 3. Dark Film Vignette / Gradient Overlay */}
-                <div className="card-gradient-vignette" />
+              {/* 3. Dark Film Vignette / Gradient Overlay */}
+              <div className="card-gradient-vignette" />
 
-                {/* 4. Top Category / Partner Badge */}
-                <div className="card-top-bar">
-                  <span className="card-badge-label">{brand.badgeText}</span>
-                  {brand.isFirstPartner && (
-                    <span className="first-partner-glow-dot" title="First Official Partner" />
-                  )}
-                </div>
+              {/* 4. Top Category Badge */}
+              <div className="card-top-bar">
+                <span className="card-badge-label">{brand.badgeText}</span>
+              </div>
 
-                {/* 5. Center: Distinct Brand Logo */}
-                <div className="card-center-logo-box">
-                  {/* Porsche Crest */}
-                  {brand.logoType === "porsche" && (
-                    <div className="logo-brand-center-wrap">
-                      <img
-                        src="/images/clients/logos/porsche.png"
-                        alt="Porsche Egypt"
-                        className="brand-logo-img porsche-crest-img"
-                      />
-                      <span className="porsche-sub-text">PORSCHE EGYPT</span>
-                    </div>
-                  )}
+              {/* 5. Center: Distinct Brand Logo matching screenshot */}
+              <div className="card-center-logo-box">
+                {brand.logoType === "porsche" && (
+                  <img
+                    src="/images/clients/logos/porsche.png"
+                    alt="Porsche Egypt"
+                    className="porsche-crest-img"
+                  />
+                )}
 
-                  {/* Eskan Misr Logo */}
-                  {brand.logoType === "eskan" && (
-                    <div className="logo-brand-center-wrap">
-                      <span className="eskan-main-text">Eskan Misr</span>
-                      <span className="eskan-arabic-text">إسـكـان مـصـر</span>
-                    </div>
-                  )}
+                {brand.logoType === "eskan" && (
+                  <span className="eskan-clean-text">Eskan Misr</span>
+                )}
 
-                  {/* The Capital Logo */}
-                  {brand.logoType === "capital" && (
-                    <div className="logo-brand-center-wrap">
-                      <div className="capital-badge-card">
-                        <img
-                          src="/images/clients/logos/the-capital-cropped.png"
-                          alt="The Capital"
-                          className="capital-logo-img"
-                        />
-                      </div>
-                    </div>
-                  )}
+                {brand.logoType === "capital" && (
+                  <img
+                    src="/images/clients/logos/the-capital.png"
+                    alt="The Capital"
+                    className="capital-square-img"
+                  />
+                )}
 
-                  {/* ABRAG Logo */}
-                  {brand.logoType === "abrag" && (
-                    <div className="logo-brand-center-wrap">
-                      <img
-                        src="/images/clients/logos/abrag-transparent.png"
-                        alt="ABRAG Developments"
-                        className="brand-logo-img abrag-mark-img"
-                      />
-                      <div className="abrag-text-group">
-                        <span className="abrag-name-text">ABRAG</span>
-                        <span className="abrag-sub-text">DEVELOPMENTS</span>
-                      </div>
-                    </div>
-                  )}
+                {brand.logoType === "abrag" && (
+                  <img
+                    src="/images/clients/logos/abrag.png"
+                    alt="ABRAG Development"
+                    className="abrag-square-img"
+                  />
+                )}
 
-                  {/* Schön Clinics Logo */}
-                  {brand.logoType === "schon" && (
-                    <div className="logo-brand-center-wrap">
-                      <img
-                        src="/images/clients/logos/schon-clinics.png"
-                        alt="Schön Clinics"
-                        className="brand-logo-img schon-logo-img"
-                      />
-                    </div>
-                  )}
+                {brand.logoType === "ghandour" && (
+                  <span className="ghandour-clean-text">El-Ghandour</span>
+                )}
 
-                  {/* Clorox Logo */}
-                  {brand.logoType === "clorox" && (
-                    <div className="logo-brand-center-wrap">
-                      <img
-                        src="/images/clients/logos/clorox.png"
-                        alt="Clorox"
-                        className="brand-logo-img clorox-diamond-img"
-                      />
-                    </div>
-                  )}
-                </div>
+                {brand.logoType === "clorox" && (
+                  <img
+                    src="/images/clients/logos/clorox.png"
+                    alt="Clorox"
+                    className="clorox-diamond-img"
+                  />
+                )}
 
-                {/* 6. Bottom Bar: OPEN PROJECT (+) */}
-                <div className="card-bottom-bar">
-                  <div className="open-project-btn">
-                    <span className="open-text">OPEN PROJECT</span>
-                    <span className="plus-circle-icon">
-                      <Plus size={13} strokeWidth={2.5} />
-                    </span>
-                  </div>
+                {brand.logoType === "cpc" && (
+                  <img
+                    src="/images/clients/logos/cpc.png"
+                    alt="CPC"
+                    className="cpc-logo-img"
+                  />
+                )}
 
-                  <span className="card-house-micro">
-                    {brand.house === "Devaj Films" ? "Devaj Films" : "Devaj Productions"}
-                  </span>
+                {brand.logoType === "schon" && (
+                  <img
+                    src="/images/clients/logos/schon-clinics.png"
+                    alt="Schön Clinics"
+                    className="schon-logo-img"
+                  />
+                )}
+              </div>
+
+              {/* 6. Bottom Bar: OPEN PROJECT + Circle Arrow Button */}
+              <div className="card-bottom-bar">
+                <span className="open-project-text">OPEN PROJECT</span>
+                <div className="card-circle-arrow-btn">
+                  <Play size={10} fill="currentColor" strokeWidth={0} style={{ marginLeft: "2px" }} />
                 </div>
               </div>
+            </div>
           ))}
         </div>
       </div>
@@ -530,35 +555,45 @@ export default function ClientsPartnersSection() {
                         className="modal-emblem-img modal-porsche-crest"
                       />
                     )}
+                    {selectedBrand.logoType === "eskan" && (
+                      <span className="modal-eskan-pill">Eskan Misr</span>
+                    )}
                     {selectedBrand.logoType === "capital" && (
                       <img
-                        src="/images/clients/logos/the-capital-cropped.png"
+                        src="/images/clients/logos/the-capital.png"
                         alt="The Capital"
                         className="modal-emblem-img modal-capital-badge"
                       />
                     )}
                     {selectedBrand.logoType === "abrag" && (
-                      <div className="modal-abrag-pill">
-                        <img
-                          src="/images/clients/logos/abrag-transparent.png"
-                          alt="ABRAG Developments"
-                          style={{ height: "26px", width: "auto" }}
-                        />
-                        <span className="modal-abrag-pill-text">ABRAG</span>
-                      </div>
-                    )}
-                    {selectedBrand.logoType === "schon" && (
                       <img
-                        src="/images/clients/logos/schon-clinics.png"
-                        alt="Schön Clinics"
-                        className="modal-emblem-img modal-schon-mark"
+                        src="/images/clients/logos/abrag.png"
+                        alt="ABRAG Developments"
+                        className="modal-emblem-img modal-abrag-badge"
                       />
+                    )}
+                    {selectedBrand.logoType === "ghandour" && (
+                      <span className="modal-ghandour-pill">El-Ghandour</span>
                     )}
                     {selectedBrand.logoType === "clorox" && (
                       <img
                         src="/images/clients/logos/clorox.png"
                         alt="Clorox"
                         className="modal-emblem-img modal-clorox-mark"
+                      />
+                    )}
+                    {selectedBrand.logoType === "cpc" && (
+                      <img
+                        src="/images/clients/logos/cpc.png"
+                        alt="CPC"
+                        className="modal-emblem-img modal-cpc-mark"
+                      />
+                    )}
+                    {selectedBrand.logoType === "schon" && (
+                      <img
+                        src="/images/clients/logos/schon-clinics.png"
+                        alt="Schön Clinics"
+                        className="modal-emblem-img modal-schon-mark"
                       />
                     )}
                   </div>
@@ -675,46 +710,31 @@ export default function ClientsPartnersSection() {
           color: #ffffff;
         }
 
-        /* 3x2 Grid for 6 Brands */
+        /* 4x2 Seamless Grid from User Screenshot */
         .brands-showcase-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Brand Cinema Card (Exact Geometry from User Screenshot) */
         .brand-cinema-card {
           position: relative;
-          height: 440px;
-          border-radius: 18px;
-          overflow: hidden;
-          background-color: #121212;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-          cursor: pointer;
+          aspect-ratio: 1 / 1;
+          min-height: 270px;
+          background-color: #0b0b0b;
           display: flex;
           flex-direction: column;
-          justifyContent: space-between;
+          justify-content: space-between;
           padding: 24px 26px;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-          animation: brandCardIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
-
-        @keyframes brandCardIn {
-          from {
-            opacity: 0;
-            transform: translateY(16px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          overflow: hidden;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
         }
 
         .brand-cinema-card:hover {
-          transform: translateY(-8px);
-          border-color: rgba(230, 57, 70, 0.65);
-          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(230, 57, 70, 0.2);
+          background-color: #121212;
         }
 
         /* Video on Hover */
@@ -731,10 +751,10 @@ export default function ClientsPartnersSection() {
         }
 
         .brand-cinema-card:hover .card-hover-video {
-          opacity: 0.88;
+          opacity: 0.45;
         }
 
-        /* Static Background Image */
+        /* Static Background Image (subtle dark film texture) */
         .card-static-bg {
           position: absolute;
           inset: 0;
@@ -743,26 +763,21 @@ export default function ClientsPartnersSection() {
           background-size: cover;
           background-position: center center;
           z-index: 0;
-          filter: brightness(0.4) contrast(1.1);
+          filter: blur(8px) brightness(0.2) contrast(1.1);
+          transform: scale(1.08);
           transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
         }
 
         .brand-cinema-card:hover .card-static-bg {
-          transform: scale(1.06);
-          filter: brightness(0.6) contrast(1.15);
+          transform: scale(1.12);
+          filter: blur(4px) brightness(0.32) contrast(1.15);
         }
 
         /* Dark Film Vignette */
         .card-gradient-vignette {
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            to bottom,
-            rgba(10, 10, 10, 0.65) 0%,
-            rgba(10, 10, 10, 0.2) 40%,
-            rgba(10, 10, 10, 0.7) 75%,
-            rgba(10, 10, 10, 0.95) 100%
-          );
+          background: radial-gradient(circle at center, rgba(11, 11, 11, 0.3) 0%, rgba(11, 11, 11, 0.88) 100%);
           z-index: 2;
           pointer-events: none;
         }
@@ -772,25 +787,17 @@ export default function ClientsPartnersSection() {
           position: relative;
           z-index: 3;
           display: flex;
-          align-items: center;
-          justify-content: space-between;
+          align-items: flex-start;
+          justify-content: flex-start;
         }
 
         .card-badge-label {
           font-family: var(--font-jakarta), var(--font-sans);
           font-size: 0.72rem;
-          font-weight: 800;
+          font-weight: 700;
           text-transform: uppercase;
-          letter-spacing: 0.12em;
-          color: rgba(234, 232, 228, 0.6);
-        }
-
-        .first-partner-glow-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background-color: #E63946;
-          box-shadow: 0 0 10px #E63946;
+          letter-spacing: 0.14em;
+          color: rgba(255, 255, 255, 0.48);
         }
 
         /* Card Center Logo Box */
@@ -800,143 +807,130 @@ export default function ClientsPartnersSection() {
           display: flex;
           align-items: center;
           justify-content: center;
-          flex-direction: column;
+          flex: 1;
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .brand-cinema-card:hover .card-center-logo-box {
-          transform: scale(1.06);
+          transform: scale(1.05);
         }
 
-        /* Logo Typographic Wrappers */
-        .logo-porsche-wrap {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 12px;
-        }
-
-        /* Universal Brand Logo Center Wrap */
-        .logo-brand-center-wrap {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 12px;
-          text-align: center;
-        }
-
-        .brand-logo-img {
-          display: block;
-          object-fit: contain;
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
-        }
-
-        /* 1. Porsche */
+        /* 1. Porsche Crest */
         .porsche-crest-img {
-          height: 100px;
+          height: 86px;
           width: auto;
-          max-width: 135px;
-          filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.85));
-        }
-
-        .porsche-sub-text {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.86rem;
-          font-weight: 800;
-          letter-spacing: 0.2em;
-          color: #ffffff;
-          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-        }
-
-        /* 2. Eskan Misr */
-        .eskan-main-text {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 2.1rem;
-          font-weight: 800;
-          letter-spacing: -0.02em;
-          color: #ffffff;
-          text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9);
-        }
-
-        .eskan-arabic-text {
-          font-size: 1.05rem;
-          font-weight: 700;
-          color: rgba(234, 232, 228, 0.7);
-          letter-spacing: 0.05em;
-        }
-
-        /* 3. The Capital (Emerald & Gold Emblem Card) */
-        .capital-badge-card {
-          border-radius: 14px;
-          overflow: hidden;
-          border: 1px solid rgba(212, 175, 55, 0.45);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 20px rgba(45, 80, 41, 0.4);
-          transition: all 0.35s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #2d5029;
-        }
-
-        .brand-cinema-card:hover .capital-badge-card {
-          border-color: rgba(212, 175, 55, 0.8);
-          box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 28px rgba(212, 175, 55, 0.35);
-        }
-
-        .capital-logo-img {
-          height: 80px;
-          width: auto;
-          max-width: 215px;
-          display: block;
+          max-width: 120px;
           object-fit: contain;
+          filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.85));
         }
 
-        /* 4. ABRAG Developments */
-        .abrag-mark-img {
+        /* 2. Eskan Misr Clean Text */
+        .eskan-clean-text {
+          font-family: var(--font-jakarta), var(--font-sans);
+          font-size: 1.85rem;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          color: #ffffff;
+          text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9);
+        }
+
+        /* 3. The Capital Square Graphic */
+        .capital-square-img {
+          width: 125px;
+          height: 125px;
+          object-fit: cover;
+          display: block;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+        }
+
+        /* 4. ABRAG Square Graphic */
+        .abrag-square-img {
+          width: 125px;
+          height: 125px;
+          object-fit: cover;
+          display: block;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+        }
+
+        /* 5. El-Ghandour Clean Text */
+        .ghandour-clean-text {
+          font-family: var(--font-jakarta), var(--font-sans);
+          font-size: 1.85rem;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          color: #ffffff;
+          text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9);
+        }
+
+        /* 6. Clorox Diamond */
+        .clorox-diamond-img {
           height: 68px;
           width: auto;
-          filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.9));
+          max-width: 155px;
+          object-fit: contain;
+          filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.7));
         }
 
-        .abrag-text-group {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 2px;
-        }
-
-        .abrag-name-text {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 1.25rem;
-          font-weight: 900;
-          letter-spacing: 0.16em;
-          color: #ffffff;
-          text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
-        }
-
-        .abrag-sub-text {
-          font-size: 0.68rem;
-          font-weight: 700;
-          letter-spacing: 0.24em;
-          color: rgba(234, 232, 228, 0.65);
-        }
-
-        /* 5. Schön Clinics */
-        .schon-logo-img {
-          width: clamp(210px, 17vw, 255px);
-          height: auto;
-          max-height: 94px;
-          filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.9));
-        }
-
-        /* 6. Clorox */
-        .clorox-diamond-img {
-          height: 84px;
+        /* 7. CPC Logo */
+        .cpc-logo-img {
+          height: 66px;
           width: auto;
-          max-width: 195px;
-          filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.75));
-          transform: rotate(-2deg);
+          max-width: 155px;
+          object-fit: contain;
+          filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.7));
+        }
+
+        /* 8. Schön Clinics */
+        .schon-logo-img {
+          height: 52px;
+          width: auto;
+          max-width: 185px;
+          object-fit: contain;
+          filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.85));
+        }
+
+        /* Card Bottom Bar (OPEN PROJECT + Circle Arrow Button) */
+        .card-bottom-bar {
+          position: relative;
+          z-index: 3;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .open-project-text {
+          font-family: var(--font-jakarta), var(--font-sans);
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.85);
+          transition: color 0.25s ease;
+        }
+
+        .brand-cinema-card:hover .open-project-text {
+          color: #ffffff;
+        }
+
+        .card-circle-arrow-btn {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          background: rgba(255, 255, 255, 0.05);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .brand-cinema-card:hover .card-circle-arrow-btn {
+          border-color: #ffffff;
+          background: #ffffff;
+          color: #0b0b0b;
+          transform: scale(1.1);
+          box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
         }
 
         /* Modal Brand Emblem Header */
@@ -968,89 +962,52 @@ export default function ClientsPartnersSection() {
 
         .modal-capital-badge {
           height: 44px;
-          width: auto;
-          border-radius: 8px;
+          width: 44px;
+          object-fit: cover;
+          border-radius: 6px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
         }
 
-        .modal-abrag-pill {
-          background: #0d0d0d;
-          padding: 6px 14px;
-          border-radius: 8px;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        .modal-abrag-badge {
+          height: 44px;
+          width: 44px;
+          object-fit: cover;
+          border-radius: 6px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
         }
 
-        .modal-abrag-pill-text {
-          color: #ffffff;
+        .modal-eskan-pill {
           font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.8rem;
-          font-weight: 800;
-          letter-spacing: 0.12em;
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #111111;
+          letter-spacing: -0.01em;
+        }
+
+        .modal-ghandour-pill {
+          font-family: var(--font-jakarta), var(--font-sans);
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #111111;
+          letter-spacing: -0.01em;
         }
 
         .modal-schon-mark {
-          height: 38px;
+          height: 36px;
           width: auto;
           filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
         }
 
         .modal-clorox-mark {
-          height: 38px;
+          height: 36px;
           width: auto;
           filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
         }
 
-        /* Card Bottom Bar (OPEN PROJECT +) */
-        .card-bottom-bar {
-          position: relative;
-          z-index: 3;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .open-project-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: rgba(234, 232, 228, 0.8);
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.76rem;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          transition: all 0.25s ease;
-        }
-
-        .plus-circle-icon {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.25);
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.25s ease;
-        }
-
-        .brand-cinema-card:hover .open-project-btn {
-          color: #ffffff;
-        }
-
-        .brand-cinema-card:hover .plus-circle-icon {
-          background: #E63946;
-          border-color: #E63946;
-          color: #ffffff;
-          transform: rotate(90deg);
-        }
-
-        .card-house-micro {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.72rem;
-          font-weight: 600;
-          color: rgba(234, 232, 228, 0.45);
+        .modal-cpc-mark {
+          height: 36px;
+          width: auto;
+          filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.15));
         }
 
         /* =================================================================== */
@@ -1354,10 +1311,9 @@ export default function ClientsPartnersSection() {
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 1200px) {
+        @media (max-width: 1100px) {
           .brands-showcase-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
           }
         }
 
@@ -1371,13 +1327,13 @@ export default function ClientsPartnersSection() {
           }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
           .brands-showcase-grid {
             grid-template-columns: 1fr;
-            gap: 18px;
           }
           .brand-cinema-card {
-            height: 380px;
+            min-height: 250px;
+            padding: 20px 22px;
           }
           .brand-modal-white-card {
             padding: 28px 20px;

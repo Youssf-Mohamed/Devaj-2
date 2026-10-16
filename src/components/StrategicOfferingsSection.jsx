@@ -14,7 +14,7 @@ export default function StrategicOfferingsSection() {
       title: "Cinematic & Narrative Films",
       subtitle: "Large-Scale Enterprise & Cultural Media",
       description: "Documentaries, corporate brand films, television commercials, and cinematic narratives engineered to build enduring market authority.",
-      image: "/images/offerings/cinematic-films.jpg",
+      image: "/images/offerings/1.jpeg",
       deliverables: [
         "Documentary films & high-budget storytelling",
         "Corporate profile films for mega corporations & factories",
@@ -65,7 +65,7 @@ export default function StrategicOfferingsSection() {
       title: "Studio Rental & Special Media",
       subtitle: "Broadcast, Podcasts & Virtual Production",
       description: "Fully equipped soundproof studio rentals, multi-camera live broadcast setups, premium acoustic podcasts, aerial drone filming, and 3D VFX.",
-      image: "/images/offerings/special-productions.jpg",
+      image: "/images/offerings/4.jpeg",
       deliverables: [
         "Multi-camera 4K podcast studio with acoustic wood treatment",
         "Live-streaming, conference broadcasts, and interactive webinars",

@@ -31,7 +31,7 @@ export default function StrategicOfferingsSection() {
       title: "Commercial & Digital Content",
       subtitle: "Agile, Conversion-Driven Visuals",
       description: "Fast-turnaround commercials, high-converting social reels, and dynamic product stories designed to maximize direct brand sales and viral reach.",
-      image: "/images/offerings/commercial-production.jpg",
+      image: "/images/offerings/2.jpeg",
       deliverables: [
         "Commercial & digital social campaigns (Instagram, TikTok, YouTube)",
         "High-retention Reels & Shorts with 3-second viral hooks",
@@ -167,7 +167,7 @@ export default function StrategicOfferingsSection() {
               <div
                 key={item.id}
                 onClick={() => setSelectedOffering(item)}
-                className={`offering-card card-col-${idx + 1} ${isSelected ? "selected" : ""} reveal-on-scroll delay-${(idx + 1) * 100}`}
+                className={`offering-card card-col-${idx + 1} ${isSelected ? "selected" : ""}`}
               >
                 {/* Top-Right Number Overlapping Image (01, 02, 03, 04) */}
                 <div className="card-number-badge">

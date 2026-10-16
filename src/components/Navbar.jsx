@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState("houses"); // open by default
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,69 +58,15 @@ export default function Navbar() {
     }
   };
 
-  // Only real, active sections on the page — all unused/dummy buttons removed
+  // Minimal, streamlined navigation items without clutter
   const menuItems = [
-    {
-      id: "about",
-      number: "01",
-      label: "Who We Are",
-      href: "#about",
-      tagline: "Devaj Group Identity & Core Vision",
-      hasSubmenu: false,
-    },
-    {
-      id: "offerings",
-      number: "02",
-      label: "Strategic Capabilities",
-      href: "#offerings",
-      tagline: "Four Pillars of Production Craft",
-      hasSubmenu: false,
-    },
-    {
-      id: "houses",
-      number: "03",
-      label: "The Creative Houses",
-      href: "#houses",
-      tagline: "Two Autonomous Media Houses",
-      hasSubmenu: true,
-      subitems: [
-        { label: "Devaj Productions — Agile Commercials & Reels", href: "#houses" },
-        { label: "Devaj Films — Enterprise Cinema & TVCs", href: "#houses" },
-      ],
-    },
-    {
-      id: "clients",
-      number: "04",
-      label: "Selected Work",
-      href: "#clients",
-      tagline: "Brand Archive & Flagship Partners",
-      hasSubmenu: false,
-    },
-    {
-      id: "calculator",
-      number: "05",
-      label: "Project Calculator",
-      href: "#calculator",
-      tagline: "Instant Production Estimate",
-      hasSubmenu: false,
-    },
-    {
-      id: "sectors",
-      number: "06",
-      label: "Sectors We Serve",
-      href: "#sectors",
-      tagline: "Industry-Specific Storytelling",
-      hasSubmenu: false,
-    },
-    {
-      id: "connect",
-      number: "07",
-      label: "Start A Project",
-      href: "#connect",
-      tagline: "Inquire, Brief & Collaborate",
-      hasSubmenu: false,
-      isCta: true,
-    },
+    { number: "01", label: "Who We Are", href: "#about" },
+    { number: "02", label: "Strategic Capabilities", href: "#offerings" },
+    { number: "03", label: "The Creative Houses", href: "#houses" },
+    { number: "04", label: "Selected Work", href: "#clients" },
+    { number: "05", label: "Project Calculator", href: "#calculator" },
+    { number: "06", label: "Sectors We Serve", href: "#sectors" },
+    { number: "07", label: "Start A Project", href: "#connect", isCta: true },
   ];
 
   return (
@@ -133,14 +78,18 @@ export default function Navbar() {
           top: 0,
           left: 0,
           right: 0,
-          zIndex: 50,
+          zIndex: 70,
           transition: "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          backgroundColor: scrolled ? "rgba(13, 13, 13, 0.92)" : "transparent",
-          backdropFilter: scrolled ? "blur(16px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-          borderBottom: scrolled
-            ? "1px solid rgba(255, 255, 255, 0.08)"
-            : "1px solid transparent",
+          backgroundColor: menuOpen
+            ? "transparent"
+            : scrolled
+            ? "rgba(13, 13, 13, 0.92)"
+            : "transparent",
+          backdropFilter: menuOpen || !scrolled ? "none" : "blur(16px)",
+          WebkitBackdropFilter: menuOpen || !scrolled ? "none" : "blur(16px)",
+          borderBottom: menuOpen || !scrolled
+            ? "1px solid transparent"
+            : "1px solid rgba(255, 255, 255, 0.08)",
           padding: scrolled ? "1rem 3.5rem" : "1.6rem 3.5rem",
           color: "#eae8e4",
         }}
@@ -210,7 +159,7 @@ export default function Navbar() {
               width: "48px",
               height: "40px",
               color: "#eae8e4",
-              zIndex: 51,
+              zIndex: 75,
             }}
           >
             <span
@@ -258,120 +207,67 @@ export default function Navbar() {
           <div className="menu-container">
             {/* Header info bar inside menu */}
             <div className="menu-header-bar">
-              <span className="menu-eyebrow">Devaj Group Navigation</span>
-              <span className="menu-press-esc">Press ESC or click any item to scroll</span>
+              <span className="menu-eyebrow">Devaj Group</span>
+              <span className="menu-press-esc">Press ESC or choose a section</span>
             </div>
 
-            {/* In-page navigation links list */}
+            {/* Clean, simple in-page navigation links */}
             <ul className="menu-nav-list">
               {menuItems.map((item) => (
-                <li key={item.id} className="menu-item-row">
-                  <div className="menu-item-content">
-                    {/* Main Nav Anchor */}
-                    <a
-                      href={item.href}
-                      onClick={(e) => handleNavClick(e, item.href)}
-                      className="menu-item-link"
-                    >
-                      <div className="menu-label-group">
-                        <span className="menu-item-number">{item.number}</span>
-                        <span className="menu-item-label">{item.label}</span>
-                        <span className="menu-item-tagline">{item.tagline}</span>
-                      </div>
-                      <div className="menu-arrow-icon">
-                        <ArrowUpRight size={22} strokeWidth={2} />
-                      </div>
-                    </a>
-
-                    {/* Submenu toggle if applicable */}
-                    {item.hasSubmenu && (
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setOpenSubmenu(openSubmenu === item.id ? null : item.id);
-                        }}
-                        className="menu-sub-toggle-btn"
-                        aria-label="Toggle house links"
-                      >
-                        <ChevronDown
-                          size={18}
-                          style={{
-                            transform: openSubmenu === item.id ? "rotate(180deg)" : "rotate(0deg)",
-                            transition: "transform 0.25s ease",
-                          }}
-                        />
-                      </button>
-                    )}
-                  </div>
-
-                  {/* Submenu links (both navigate smoothly in-page) */}
-                  {item.hasSubmenu && openSubmenu === item.id && (
-                    <div className="submenu-container">
-                      {item.subitems.map((sub, sIdx) => (
-                        <a
-                          key={sIdx}
-                          href={sub.href}
-                          onClick={(e) => handleNavClick(e, sub.href)}
-                          className="submenu-link"
-                        >
-                          <span className="sub-red-dot" />
-                          <span>{sub.label}</span>
-                        </a>
-                      ))}
+                <li key={item.number} className="menu-item-row">
+                  <a
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className={`menu-item-link ${item.isCta ? "is-cta-link" : ""}`}
+                  >
+                    <div className="menu-left-meta">
+                      <span className="menu-item-number">{item.number}</span>
+                      <span className="menu-item-label">{item.label}</span>
                     </div>
-                  )}
+                    <div className="menu-arrow-icon">
+                      <ArrowUpRight size={17} strokeWidth={2.2} />
+                    </div>
+                  </a>
                 </li>
               ))}
             </ul>
 
-            {/* Quick contact / direct connection footer inside menu */}
+            {/* Clean, minimal footer bar */}
             <div className="menu-footer-bar">
-              <div className="menu-contact-col">
-                <span className="footer-label">Headquarters</span>
-                <span className="footer-val">Cairo, Egypt</span>
-              </div>
-              <div className="menu-contact-col">
-                <span className="footer-label">Direct Briefing</span>
-                <a href="mailto:hello@devajgroup.com" className="footer-val link">
-                  hello@devajgroup.com
-                </a>
-              </div>
-              <div className="menu-contact-col">
-                <span className="footer-label">Direct WhatsApp</span>
-                <a
-                  href="https://wa.me/201014049339"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-val link"
-                >
-                  +20 101 404 9339
-                </a>
-              </div>
+              <span className="footer-item">Cairo, Egypt</span>
+              <a href="mailto:contact@devajgroup.com" className="footer-item link">
+                contact@devajgroup.com
+              </a>
+              <a
+                href="https://wa.me/201014049339"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-item link whatsapp-highlight"
+              >
+                +20 101 404 9339
+              </a>
             </div>
           </div>
         </div>
       )}
 
       <style jsx>{`
-        /* Fullscreen Menu Overlay */
+        /* Fullscreen Menu Overlay: Solid Deep Black to prevent page bleed */
         .fullscreen-menu-overlay {
           position: fixed;
           inset: 0;
-          z-index: 49;
-          background-color: rgba(9, 9, 9, 0.97);
-          backdrop-filter: blur(28px);
-          -webkit-backdrop-filter: blur(28px);
+          z-index: 55;
+          background-color: #080808;
           color: #eae8e4;
-          padding: 130px 48px 50px;
+          padding: 100px 32px 32px;
           display: flex;
           flex-direction: column;
           overflow-y: auto;
-          animation: menuFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          animation: menuFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .menu-container {
-          max-width: 1440px;
+          max-width: 900px;
           width: 100%;
           margin: 0 auto;
           display: flex;
@@ -384,14 +280,14 @@ export default function Navbar() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding-bottom: 24px;
+          padding-bottom: 14px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          margin-bottom: 32px;
+          margin-bottom: 16px;
         }
 
         .menu-eyebrow {
           font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.78rem;
+          font-size: 0.72rem;
           font-weight: 800;
           letter-spacing: 0.16em;
           text-transform: uppercase;
@@ -400,93 +296,84 @@ export default function Navbar() {
 
         .menu-press-esc {
           font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.75rem;
-          color: rgba(234, 232, 228, 0.45);
-          letter-spacing: 0.06em;
+          font-size: 0.72rem;
+          color: rgba(234, 232, 228, 0.38);
+          letter-spacing: 0.04em;
         }
 
         .menu-nav-list {
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 6px;
+          gap: 0;
           margin: 0;
           padding: 0;
         }
 
         .menu-item-row {
           border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-          padding: 14px 0 16px;
-          transition: border-color 0.25s ease;
+          transition: border-color 0.2s ease;
         }
 
         .menu-item-row:hover {
-          border-bottom-color: rgba(230, 57, 70, 0.35);
-        }
-
-        .menu-item-content {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 16px;
+          border-bottom-color: rgba(230, 57, 70, 0.4);
         }
 
         .menu-item-link {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          flex: 1;
+          padding: 14px 8px;
           text-decoration: none;
           color: #eae8e4;
-          transition: transform 0.25s ease, color 0.25s ease;
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+          border-radius: 8px;
         }
 
         .menu-item-link:hover {
-          color: #ffffff;
           transform: translateX(8px);
+          background: rgba(255, 255, 255, 0.025);
         }
 
-        .menu-label-group {
+        .menu-left-meta {
           display: flex;
           align-items: baseline;
-          gap: 20px;
-          flex-wrap: wrap;
+          gap: 16px;
         }
 
         .menu-item-number {
           font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.85rem;
-          font-weight: 800;
+          font-size: 0.78rem;
+          font-weight: 700;
           color: #e63946;
-          letter-spacing: 0.1em;
+          letter-spacing: 0.08em;
+          min-width: 22px;
         }
 
         .menu-item-label {
           font-family: var(--font-serif);
-          font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+          font-size: clamp(1.35rem, 2.4vw, 1.95rem);
           font-weight: 700;
           font-style: italic;
           letter-spacing: -0.02em;
           color: #ffffff;
+          line-height: 1.25;
+          transition: color 0.2s ease;
         }
 
-        .menu-item-tagline {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.85rem;
-          color: rgba(234, 232, 228, 0.45);
-          font-style: normal;
-          letter-spacing: 0.02em;
+        .menu-item-link:hover .menu-item-label {
+          color: #ffffff;
         }
 
         .menu-arrow-icon {
-          width: 40px;
-          height: 40px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: rgba(234, 232, 228, 0.6);
+          color: rgba(234, 232, 228, 0.4);
           transition: all 0.25s ease;
           flex-shrink: 0;
         }
@@ -495,108 +382,54 @@ export default function Navbar() {
           background: #e63946;
           border-color: #e63946;
           color: #ffffff;
-          transform: scale(1.08);
+          transform: scale(1.06);
         }
 
-        .menu-sub-toggle-btn {
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: #eae8e4;
-          width: 38px;
-          height: 38px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: background 0.2s ease;
+        .is-cta-link .menu-arrow-icon {
+          background: rgba(230, 57, 70, 0.15);
+          border-color: rgba(230, 57, 70, 0.35);
+          color: #e63946;
         }
 
-        .menu-sub-toggle-btn:hover {
-          background: rgba(255, 255, 255, 0.15);
-        }
-
-        /* Submenu container */
-        .submenu-container {
-          padding: 16px 0 6px 36px;
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .submenu-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          color: rgba(234, 232, 228, 0.7);
-          text-decoration: none;
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 1.05rem;
-          font-weight: 600;
-          transition: all 0.2s ease;
-          width: fit-content;
-        }
-
-        .submenu-link:hover {
-          color: #ffffff;
-          transform: translateX(6px);
-        }
-
-        .sub-red-dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
+        .is-cta-link:hover .menu-arrow-icon {
           background: #e63946;
-          display: inline-block;
+          color: #ffffff;
         }
 
         /* Menu Footer */
         .menu-footer-bar {
           display: flex;
-          flex-wrap: wrap;
           align-items: center;
           justify-content: space-between;
-          gap: 24px;
-          padding-top: 36px;
-          margin-top: 40px;
+          flex-wrap: wrap;
+          gap: 16px;
+          padding-top: 20px;
+          margin-top: 20px;
           border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .menu-contact-col {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-        }
-
-        .footer-label {
           font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.72rem;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.12em;
-          color: rgba(234, 232, 228, 0.45);
+          font-size: 0.82rem;
+          color: rgba(234, 232, 228, 0.5);
         }
 
-        .footer-val {
-          font-family: var(--font-jakarta), var(--font-sans);
-          font-size: 0.95rem;
-          color: #ffffff;
-          font-weight: 600;
-        }
-
-        .footer-val.link {
+        .footer-item.link {
+          color: rgba(234, 232, 228, 0.65);
           text-decoration: none;
           transition: color 0.2s ease;
         }
 
-        .footer-val.link:hover {
-          color: #e63946;
+        .footer-item.link:hover {
+          color: #ffffff;
+        }
+
+        .footer-item.whatsapp-highlight {
+          color: #25d366;
+          font-weight: 600;
         }
 
         @keyframes menuFadeIn {
           from {
             opacity: 0;
-            transform: translateY(-10px);
+            transform: translateY(-8px);
           }
           to {
             opacity: 1;
@@ -609,20 +442,26 @@ export default function Navbar() {
             padding: 1rem 1.5rem !important;
           }
           .navbar-brand-logo {
-            height: 68px !important;
+            height: 64px !important;
           }
           .fullscreen-menu-overlay {
-            padding: 110px 24px 40px;
+            padding: 90px 20px 24px;
           }
-          .menu-label-group {
-            gap: 10px;
+          .menu-item-link {
+            padding: 11px 4px;
           }
-          .menu-item-tagline {
-            display: none;
+          .menu-item-label {
+            font-size: 1.25rem;
+          }
+          .menu-arrow-icon {
+            width: 28px;
+            height: 28px;
           }
           .menu-footer-bar {
             flex-direction: column;
             align-items: flex-start;
+            gap: 8px;
+            font-size: 0.78rem;
           }
         }
       `}</style>

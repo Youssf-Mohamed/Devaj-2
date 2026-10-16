@@ -147,7 +147,8 @@ export default function SectorsSection() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          gap: "22px",
+          gap: "14px",
+          padding: "16px 0 28px",
           overflow: "hidden",
           maskImage:
             "linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
@@ -223,8 +224,13 @@ export default function SectorsSection() {
         .marquee-wrapper {
           position: relative;
           width: 100%;
-          overflow: hidden;
+          overflow: visible;
           display: flex;
+          padding: 8px 0 16px;
+        }
+
+        .marquee-wrapper:hover {
+          z-index: 10;
         }
 
         .marquee-track {
@@ -232,6 +238,7 @@ export default function SectorsSection() {
           gap: 18px;
           width: max-content;
           will-change: transform;
+          padding: 4px 0;
         }
 
         /* Row 1: Left-to-Right */
@@ -308,10 +315,12 @@ export default function SectorsSection() {
         /* Hover & Selected states: Crimson glass with glowing red dot */
         .sector-capsule-pill:hover,
         .sector-capsule-pill.selected {
+          position: relative;
+          z-index: 20;
           background-color: rgba(230, 57, 70, 0.16);
           color: #ffffff;
-          transform: translateY(-3px) scale(1.02);
-          box-shadow: 0 12px 28px rgba(230, 57, 70, 0.28);
+          transform: translateY(-4px) scale(1.02);
+          box-shadow: 0 10px 24px rgba(230, 57, 70, 0.35);
           border-color: #E63946;
         }
 
